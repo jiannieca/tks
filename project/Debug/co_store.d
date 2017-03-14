@@ -1,0 +1,9 @@
+.\Debug\co_store.o: ..\colib\src\co_store.c
+.\Debug\co_store.o: d:\Keil_v5\ARM\RV31\Inc\stddef.h
+.\Debug\co_store.o: ..\colib\inc\gen_define.h
+.\Debug\co_store.o: ..\colib\inc\co_datatype.h
+.\Debug\co_store.o: ..\colib\inc\co_store.h
+.\Debug\co_store.o: ..\colib\inc\co_odaccess.h
+.\Debug\co_store.o: ..\colib\src\ico_indication.h
+.\Debug\co_store.o: ..\colib\src\ico_odaccess.h
+.\Debug\co_store.o: ..\colib\src\ico_store.h

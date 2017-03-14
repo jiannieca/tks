@@ -1,0 +1,2927 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\work\project\Keil_ST\BSC_UC\project\Pro.uvproj
+Project File Date:  02/17/2017
+
+<h2>Output:</h2>
+Build target 'Pro'
+linking...
+Program Size: Code=121116 RO-data=30496 RW-data=7512 ZI-data=94448  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.395V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Main.c...
+..\App\Main.c(68): warning:  #223-D: function "updateBP_BM" declared implicitly
+..\App\Main.c(72): warning:  #175-D: subscript out of range
+..\App\Main.c(72): warning:  #167-D: argument of type "int (*)(void *)" is incompatible with parameter of type "void (*)(void *)"
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(127): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(183): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(179): warning:  #550-D: variable "idx" was set but never used
+compiling Task_CAN2.c...
+..\App\Task_CAN2.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN2.c(45): warning:  #177-D: variable "sd_qid" was declared but never referenced
+..\App\Task_CAN2.c(46): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(47): warning:  #177-D: variable "wd" was declared but never referenced
+..\App\Task_CAN2.c(48): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_CAN2.c(80): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(81): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(66): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(187): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN2.c(296): warning:  #223-D: function "NVM_SysinfoWrite" declared implicitly
+..\App\Task_CAN2.c(411): warning:  #177-D: variable "txMsg" was declared but never referenced
+..\App\Task_CAN2.c(412): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(434): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(483): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(485): warning:  #177-D: variable "lp" was declared but never referenced
+..\App\Task_CAN2.c(550): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_CAN2.c(691): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(706): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(410): warning:  #177-D: function "CAN_Bp2Vcu" was declared but never referenced
+..\App\Task_CAN2.c(433): warning:  #177-D: function "CAN_Bp2Relay" was declared but never referenced
+..\App\Task_CAN2.c(619): warning:  #177-D: function "sendExt_FFF0" was declared but never referenced
+..\App\Task_CAN2.c(631): warning:  #177-D: function "sendExt_FFF1" was declared but never referenced
+..\App\Task_CAN2.c(643): warning:  #177-D: function "sendExt_FFF2" was declared but never referenced
+..\App\Task_CAN2.c(651): warning:  #177-D: function "sendExt_FFF3" was declared but never referenced
+..\App\Task_CAN2.c(659): warning:  #177-D: function "sendExt_FFF4" was declared but never referenced
+compiling Task_EFlash.c...
+..\App\Task_EFlash.c(15): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_EFlash.c(74): warning:  #177-D: variable "bmsize" was declared but never referenced
+compiling appConfig.c...
+..\App\appConfig.c(27): warning:  #550-D: variable "bmsize" was set but never used
+..\App\appConfig.c(56): warning:  #550-D: variable "bpsize" was set but never used
+..\App\appConfig.c(71): warning:  #550-D: variable "bsyssize" was set but never used
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(47): error:  #18: expected a ")"
+..\App\Task_main.c(73): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(73): error:  #127: expected a statement
+..\App\Task_main.c(74): warning:  #111-D: statement is unreachable
+..\App\Task_main.c(74): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(75): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(84): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(85): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(92): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(93): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(99): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(100): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(104): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(107): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(108): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(114): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(115): error:  #121: a case label may only be used within a switch
+..\App\Task_main.c(116): error:  #116: a break statement may only be used within a loop or switch
+..\App\Task_main.c(118): error:  #65: expected a ";"
+..\App\Task_main.c(30): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(34): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(121): error:  #169: expected a declaration
+..\App\Task_main.c(148): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(149): error:  #169: expected a declaration
+..\App\Task_main.c(151): error:  #169: expected a declaration
+..\App\Task_main.c(153): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(153): error:  #147: declaration is incompatible with "BATT_MODULE_INFO bmInfo" (declared at line 184 of "..\App\Task_main.h")
+..\App\Task_main.c(153): error:  #65: expected a ";"
+..\App\Task_main.c(154): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(154): error:  #147: declaration is incompatible with "SYS_INFO sysInfo" (declared at line 180 of "..\App\Task_main.h")
+..\App\Task_main.c(154): error:  #65: expected a ";"
+..\App\Task_main.c(155): error:  #169: expected a declaration
+..\App\Task_main.c(164): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(165): error:  #169: expected a declaration
+..\App\Task_main.c(167): error:  #169: expected a declaration
+..\App\Task_main.c(171): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(172): error:  #169: expected a declaration
+..\App\Task_main.c(174): error:  #169: expected a declaration
+compiling Task_SysCheck.c...
+..\App\Task_SysCheck.c(63): warning:  #223-D: function "timeDiff" declared implicitly
+Target not created
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(56): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(118): error:  #65: expected a ";"
+..\App\Task_main.c(126): error:  #268: declaration may not appear after executable statement in block
+..\App\Task_main.c(127): error:  #65: expected a ";"
+..\App\Task_main.c(148): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(30): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(34): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(150): error:  #169: expected a declaration
+..\App\Task_main.c(151): error:  #169: expected a declaration
+..\App\Task_main.c(153): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(153): error:  #147: declaration is incompatible with "BATT_MODULE_INFO bmInfo" (declared at line 184 of "..\App\Task_main.h")
+..\App\Task_main.c(153): error:  #65: expected a ";"
+..\App\Task_main.c(154): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(154): error:  #147: declaration is incompatible with "SYS_INFO sysInfo" (declared at line 180 of "..\App\Task_main.h")
+..\App\Task_main.c(154): error:  #65: expected a ";"
+..\App\Task_main.c(155): error:  #169: expected a declaration
+..\App\Task_main.c(164): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(165): error:  #169: expected a declaration
+..\App\Task_main.c(167): error:  #169: expected a declaration
+..\App\Task_main.c(171): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(172): error:  #169: expected a declaration
+..\App\Task_main.c(174): error:  #169: expected a declaration
+..\App\Task_main.c(178): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(179): error:  #169: expected a declaration
+..\App\Task_main.c(181): error:  #169: expected a declaration
+..\App\Task_main.c(192): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(193): error:  #169: expected a declaration
+..\App\Task_main.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(202): error:  #169: expected a declaration
+..\App\Task_main.c(204): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(204): error:  #65: expected a ";"
+..\App\Task_main.c(206): error:  #169: expected a declaration
+..\App\Task_main.c(211): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(212): error:  #169: expected a declaration
+..\App\Task_main.c(213): error:  #169: expected a declaration
+..\App\Task_main.c(215): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(215): error:  #65: expected a ";"
+..\App\Task_main.c(216): error:  #169: expected a declaration
+..\App\Task_main.c(219): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(221): error:  #169: expected a declaration
+..\App\Task_main.c(233): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(234): error:  #77-D: this declaration has no storage class or type specifier
+Target not created
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(56): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(126): error:  #268: declaration may not appear after executable statement in block
+..\App\Task_main.c(127): error:  #65: expected a ";"
+..\App\Task_main.c(148): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(30): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(30): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(34): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(150): error:  #169: expected a declaration
+..\App\Task_main.c(151): error:  #169: expected a declaration
+..\App\Task_main.c(153): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(153): error:  #147: declaration is incompatible with "BATT_MODULE_INFO bmInfo" (declared at line 184 of "..\App\Task_main.h")
+..\App\Task_main.c(153): error:  #65: expected a ";"
+..\App\Task_main.c(154): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(154): error:  #147: declaration is incompatible with "SYS_INFO sysInfo" (declared at line 180 of "..\App\Task_main.h")
+..\App\Task_main.c(154): error:  #65: expected a ";"
+..\App\Task_main.c(155): error:  #169: expected a declaration
+..\App\Task_main.c(164): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(165): error:  #169: expected a declaration
+..\App\Task_main.c(167): error:  #169: expected a declaration
+..\App\Task_main.c(171): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(172): error:  #169: expected a declaration
+..\App\Task_main.c(174): error:  #169: expected a declaration
+..\App\Task_main.c(178): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(179): error:  #169: expected a declaration
+..\App\Task_main.c(181): error:  #169: expected a declaration
+..\App\Task_main.c(192): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(193): error:  #169: expected a declaration
+..\App\Task_main.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(202): error:  #169: expected a declaration
+..\App\Task_main.c(204): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(204): error:  #65: expected a ";"
+..\App\Task_main.c(206): error:  #169: expected a declaration
+..\App\Task_main.c(211): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(212): error:  #169: expected a declaration
+..\App\Task_main.c(213): error:  #169: expected a declaration
+..\App\Task_main.c(215): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(215): error:  #65: expected a ";"
+..\App\Task_main.c(216): error:  #169: expected a declaration
+..\App\Task_main.c(219): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(221): error:  #169: expected a declaration
+..\App\Task_main.c(233): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(234): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(234): error:  #147: declaration is incompatible with "BATT_PACK_INFO bpInfo" (declared at line 183 of "..\App\Task_main.h")
+Target not created
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(127): error:  #268: declaration may not appear after executable statement in block
+..\App\Task_main.c(128): error:  #65: expected a ";"
+..\App\Task_main.c(149): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(151): error:  #169: expected a declaration
+..\App\Task_main.c(152): error:  #169: expected a declaration
+..\App\Task_main.c(154): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(154): error:  #147: declaration is incompatible with "BATT_MODULE_INFO bmInfo" (declared at line 184 of "..\App\Task_main.h")
+..\App\Task_main.c(154): error:  #65: expected a ";"
+..\App\Task_main.c(155): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(155): error:  #147: declaration is incompatible with "SYS_INFO sysInfo" (declared at line 180 of "..\App\Task_main.h")
+..\App\Task_main.c(155): error:  #65: expected a ";"
+..\App\Task_main.c(156): error:  #169: expected a declaration
+..\App\Task_main.c(165): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(166): error:  #169: expected a declaration
+..\App\Task_main.c(168): error:  #169: expected a declaration
+..\App\Task_main.c(172): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(173): error:  #169: expected a declaration
+..\App\Task_main.c(175): error:  #169: expected a declaration
+..\App\Task_main.c(179): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(180): error:  #169: expected a declaration
+..\App\Task_main.c(182): error:  #169: expected a declaration
+..\App\Task_main.c(193): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(194): error:  #169: expected a declaration
+..\App\Task_main.c(202): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(203): error:  #169: expected a declaration
+..\App\Task_main.c(205): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(205): error:  #65: expected a ";"
+..\App\Task_main.c(207): error:  #169: expected a declaration
+..\App\Task_main.c(212): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(213): error:  #169: expected a declaration
+..\App\Task_main.c(214): error:  #169: expected a declaration
+..\App\Task_main.c(216): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(216): error:  #65: expected a ";"
+..\App\Task_main.c(217): error:  #169: expected a declaration
+..\App\Task_main.c(220): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(222): error:  #169: expected a declaration
+..\App\Task_main.c(234): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\Task_main.c(235): error:  #77-D: this declaration has no storage class or type specifier
+..\App\Task_main.c(235): error:  #147: declaration is incompatible with "BATT_PACK_INFO bpInfo" (declared at line 183 of "..\App\Task_main.h")
+Target not created
+Rebuild target 'Pro'
+compiling Main.c...
+..\App\Main.c(68): warning:  #223-D: function "updateBP_BM" declared implicitly
+..\App\Main.c(72): warning:  #175-D: subscript out of range
+..\App\Main.c(72): warning:  #167-D: argument of type "int (*)(void *)" is incompatible with parameter of type "void (*)(void *)"
+compiling Task_Test.c...
+..\App\Task_Test.c(42): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\App\Task_Test.c(49): warning:  #223-D: function "LwIP_Periodic_Handle" declared implicitly
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(127): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(183): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(179): warning:  #550-D: variable "idx" was set but never used
+compiling Task_CAN2.c...
+..\App\Task_CAN2.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN2.c(45): warning:  #177-D: variable "sd_qid" was declared but never referenced
+..\App\Task_CAN2.c(46): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(47): warning:  #177-D: variable "wd" was declared but never referenced
+..\App\Task_CAN2.c(48): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_CAN2.c(80): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(81): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(66): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(187): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN2.c(296): warning:  #223-D: function "NVM_SysinfoWrite" declared implicitly
+..\App\Task_CAN2.c(411): warning:  #177-D: variable "txMsg" was declared but never referenced
+..\App\Task_CAN2.c(412): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(434): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(483): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(485): warning:  #177-D: variable "lp" was declared but never referenced
+..\App\Task_CAN2.c(550): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_CAN2.c(691): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(706): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(410): warning:  #177-D: function "CAN_Bp2Vcu" was declared but never referenced
+..\App\Task_CAN2.c(433): warning:  #177-D: function "CAN_Bp2Relay" was declared but never referenced
+..\App\Task_CAN2.c(619): warning:  #177-D: function "sendExt_FFF0" was declared but never referenced
+..\App\Task_CAN2.c(631): warning:  #177-D: function "sendExt_FFF1" was declared but never referenced
+..\App\Task_CAN2.c(643): warning:  #177-D: function "sendExt_FFF2" was declared but never referenced
+..\App\Task_CAN2.c(651): warning:  #177-D: function "sendExt_FFF3" was declared but never referenced
+..\App\Task_CAN2.c(659): warning:  #177-D: function "sendExt_FFF4" was declared but never referenced
+compiling Task_ADC.c...
+..\App\Task_ADC.c(34): warning:  #223-D: function "parseADC" declared implicitly
+..\App\Task_ADC.c(44): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+compiling Task_AVChg.c...
+..\App\Task_AVChg.c(13): warning:  #1295-D: Deprecated declaration isValidCmd - give arg types
+..\App\Task_AVChg.c(40): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(20): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(21): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_AVChg.c(22): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_AVChg.c(69): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(70): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(77): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(78): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(85): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(86): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "crc8" was set but never used
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "pg" was set but never used
+..\App\Task_AVChg.c(113): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_AVChg.c(138): warning:  #223-D: function "setEEData" declared implicitly
+..\App\Task_AVChg.c(147): warning:  #223-D: function "getEEData" declared implicitly
+..\App\Task_AVChg.c(202): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(202): warning:  #550-D: variable "daj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "icrctbj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "xorbytelow" was set but never used
+compiling Task_EFlash.c...
+..\App\Task_EFlash.c(15): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_EFlash.c(74): warning:  #177-D: variable "bmsize" was declared but never referenced
+compiling appConfig.c...
+..\App\appConfig.c(27): warning:  #550-D: variable "bmsize" was set but never used
+..\App\appConfig.c(56): warning:  #550-D: variable "bpsize" was set but never used
+..\App\appConfig.c(71): warning:  #550-D: variable "bsyssize" was set but never used
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(312): warning:  #177-D: variable "bt" was declared but never referenced
+compiling Task_SysCheck.c...
+..\App\Task_SysCheck.c(63): warning:  #223-D: function "timeDiff" declared implicitly
+compiling Task_Wifi.c...
+..\App\Task_Wifi.c(16): warning:  #223-D: function "wifiInit" declared implicitly
+compiling Bsp_Global.c...
+..\BSP\Bsp_Global.c(13): warning:  #223-D: function "DIO_Configuration" declared implicitly
+..\BSP\Bsp_Global.c(21): warning:  #223-D: function "UART4_DMA_Init" declared implicitly
+compiling NVIC.C...
+..\BSP\NVIC.C(86): warning:  #68-D: integer conversion resulted in a change of sign
+compiling stm32f4x7_eth_bsp.c...
+compiling netconf.c...
+compiling stm32f4xx_it.c...
+..\BSP\stm32f4xx_it.c(180): warning:  #223-D: function "Time_Update" declared implicitly
+..\BSP\stm32f4xx_it.c(214): warning:  #223-D: function "LwIP_Pkt_Handle" declared implicitly
+..\BSP\stm32f4xx_it.c(204): warning:  #177-D: variable "err" was declared but never referenced
+compiling httpd.c...
+compiling 24C02.c...
+compiling BSP_GPIO.c...
+compiling bsp_CAN.C...
+..\BSP\bsp_CAN.C(221): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(222): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(240): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(280): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(281): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(305): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(308): warning:  #550-D: variable "err" was set but never used
+compiling BSP_ADC.c...
+..\BSP\BSP_ADC.c(67): warning:  #188-D: enumerated type mixed with another type
+..\BSP\BSP_ADC.c(132): warning:  #177-D: variable "i" was declared but never referenced
+compiling BSP_SCI.c...
+..\BSP\BSP_SCI.c(106): warning:  #550-D: variable "temp" was set but never used
+..\BSP\BSP_SCI.c(107): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(244): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(292): warning:  #550-D: variable "b" was set but never used
+compiling DMA.C...
+..\BSP\DMA.C(51): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(51): warning:  #69-D: integer conversion resulted in truncation
+..\BSP\DMA.C(114): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(114): warning:  #69-D: integer conversion resulted in truncation
+compiling FlashDriver.c...
+compiling SST25VF016B.c...
+compiling BSP_WDG.c...
+compiling BSP_wifi.c...
+..\BSP\BSP_wifi.c(46): warning:  #223-D: function "OSIntEnter" declared implicitly
+..\BSP\BSP_wifi.c(53): warning:  #223-D: function "OSIntExit" declared implicitly
+..\BSP\BSP_wifi.c(121): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\BSP\BSP_wifi.c(158): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+compiling M_Delay_P.c...
+compiling misc.c...
+compiling stm32f4xx_adc.c...
+compiling stm32f4xx_can.c...
+compiling stm32f4xx_crc.c...
+compiling stm32f4xx_cryp.c...
+compiling stm32f4xx_cryp_aes.c...
+compiling stm32f4xx_cryp_des.c...
+compiling stm32f4xx_cryp_tdes.c...
+compiling stm32f4xx_dac.c...
+compiling stm32f4xx_dbgmcu.c...
+compiling stm32f4xx_dcmi.c...
+compiling stm32f4xx_dma.c...
+compiling stm32f4xx_exti.c...
+compiling stm32f4xx_flash.c...
+compiling stm32f4xx_fsmc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_hash.c...
+compiling stm32f4xx_hash_md5.c...
+compiling stm32f4xx_hash_sha1.c...
+compiling stm32f4xx_i2c.c...
+compiling stm32f4xx_iwdg.c...
+compiling stm32f4xx_pwr.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_rng.c...
+compiling stm32f4xx_rtc.c...
+compiling stm32f4xx_sdio.c...
+compiling stm32f4xx_spi.c...
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_tim.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_wwdg.c...
+assembling startup_stm32f4xx.s...
+compiling system_stm32f4xx.c...
+assembling os_cpu_a.asm...
+compiling os_cpu_c.c...
+compiling os_dbg.c...
+compiling os_core.c...
+compiling os_flag.c...
+compiling os_mbox.c...
+compiling os_mem.c...
+compiling os_mutex.c...
+compiling os_q.c...
+compiling os_sem.c...
+compiling os_task.c...
+compiling os_time.c...
+compiling os_tmr.c...
+compiling api_lib.c...
+compiling api_msg.c...
+compiling err.c...
+compiling netbuf.c...
+compiling netdb.c...
+compiling netifapi.c...
+compiling sockets.c...
+compiling tcpip.c...
+compiling autoip.c...
+compiling icmp.c...
+compiling igmp.c...
+compiling inet.c...
+compiling inet_chksum.c...
+compiling ip.c...
+compiling ip_addr.c...
+compiling ip_frag.c...
+compiling dhcp.c...
+compiling dns.c...
+compiling init.c...
+compiling mem.c...
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\mem.c(184): warning:  #550-D: variable "mem_sem" was set but never used
+compiling memp.c...
+compiling netif.c...
+compiling pbuf.c...
+compiling raw.c...
+compiling stats.c...
+compiling sys.c...
+compiling tcp.c...
+compiling tcp_in.c...
+compiling tcp_out.c...
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\tcp_out.c(465): warning:  #550-D: variable "tcphdr" was set but never used
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\tcp_out.c(935): warning:  #550-D: variable "tcphdr" was set but never used
+compiling udp.c...
+compiling etharp.c...
+compiling loopif.c...
+compiling ethernetif.c...
+compiling stm32f4x7_eth.c...
+compiling can_stm32.c...
+compiling CANOpenObjDictConfig.c...
+..\CANOpen\CANOpenObjDictConfig.c(253): warning:  #1-D: last line of file ends without a newline
+compiling dcf.c...
+compiling emcy.c...
+compiling lifegrd.c...
+compiling lss.c...
+compiling nmtMaster.c...
+compiling nmtSlave.c...
+compiling objacces.c...
+compiling pdo.c...
+compiling sdo.c...
+..\CANOpen\sdo.c(1209): warning:  #223-D: function "parseBroadMsg" declared implicitly
+compiling SEGGER_RTT.c...
+compiling SEGGER_RTT_printf.c...
+..\CANOpen\SEGGER_RTT_printf.c(300): warning:  #111-D: statement is unreachable
+compiling states.c...
+compiling sync.c...
+compiling timer_stm32.c...
+compiling CO_timer.c...
+compiling ObjDict.c...
+compiling SysTick.C...
+compiling timer.C...
+compiling GlobalVar.c...
+compiling pageMake.c...
+..\src\pageMake.c(1): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(2): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(75): warning:  #177-D: variable "s" was declared but never referenced
+compiling shed_ctrl.c...
+..\src\shed_ctrl.c(39): warning:  #223-D: function "J1939IdAssb_pgn" declared implicitly
+..\src\shed_ctrl.c(180): warning:  #175-D: subscript out of range
+..\src\shed_ctrl.c(194): warning: C3487E: read from variable 'cd' with offset out of bounds
+compiling mbfunccoils.c...
+compiling mbfuncdiag.c...
+compiling mbfuncdisc.c...
+compiling mbfuncholding.c...
+compiling mbfuncinput.c...
+compiling mbfuncother.c...
+compiling mbutils.c...
+compiling portevent.c...
+compiling portserial.c...
+..\modbus\port\portserial.c(71): warning:  #177-D: function "prvvUARTTxReadyISR" was declared but never referenced
+..\modbus\port\portserial.c(81): warning:  #177-D: function "prvvUARTRxISR" was declared but never referenced
+compiling porttimer.c...
+..\modbus\port\porttimer.c(56): warning:  #177-D: function "prvvTIMERExpiredISR" was declared but never referenced
+compiling mbtcp.c...
+compiling mb.c...
+compiling porttcp.c...
+..\modbus\port\porttcp.c(250): warning:  #223-D: function "memcpy" declared implicitly
+compiling mbtcp_task.c...
+..\modbus\mbtcp_task.c(57): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(58): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(61): warning:  #223-D: function "httpd_init" declared implicitly
+..\modbus\mbtcp_task.c(66): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(73): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(74): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(87): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(71): warning:  #550-D: variable "eStatus" was set but never used
+..\modbus\mbtcp_task.c(163): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(164): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(247): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #177-D: variable "rid" was declared but never referenced
+..\modbus\mbtcp_task.c(292): warning:  #177-D: variable "pcb" was declared but never referenced
+..\modbus\mbtcp_task.c(44): warning:  #177-D: variable "usDiscreteStart" was declared but never referenced
+linking...
+Program Size: Code=121292 RO-data=30496 RW-data=7512 ZI-data=94448  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 181 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.390V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(312): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121296 RO-data=30496 RW-data=7512 ZI-data=94448  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 40 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.387V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(312): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121296 RO-data=30496 RW-data=7512 ZI-data=94448  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 40 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.399V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(130): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(186): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(182): warning:  #550-D: variable "idx" was set but never used
+linking...
+Program Size: Code=121304 RO-data=30496 RW-data=7512 ZI-data=94448  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 13 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.393V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(317): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(311): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(313): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121340 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.403V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(317): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(311): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(313): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121340 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.398V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(146): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(148): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(159): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(161): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(170): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(177): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(190): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(200): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(218): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(228): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(229): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(231): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(232): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(247): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(249): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(129): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(129): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(130): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(133): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(134): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(272): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(317): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(309): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(311): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(313): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121340 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.390V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Main.c...
+..\App\Main.c(68): warning:  #223-D: function "updateBP_BM" declared implicitly
+..\App\Main.c(72): warning:  #175-D: subscript out of range
+..\App\Main.c(72): warning:  #167-D: argument of type "int (*)(void *)" is incompatible with parameter of type "void (*)(void *)"
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(130): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(186): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(182): warning:  #550-D: variable "idx" was set but never used
+compiling Task_CAN2.c...
+..\App\Task_CAN2.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN2.c(45): warning:  #177-D: variable "sd_qid" was declared but never referenced
+..\App\Task_CAN2.c(46): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(47): warning:  #177-D: variable "wd" was declared but never referenced
+..\App\Task_CAN2.c(48): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_CAN2.c(80): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(81): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(66): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(187): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN2.c(296): warning:  #223-D: function "NVM_SysinfoWrite" declared implicitly
+..\App\Task_CAN2.c(411): warning:  #177-D: variable "txMsg" was declared but never referenced
+..\App\Task_CAN2.c(412): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(434): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(483): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(485): warning:  #177-D: variable "lp" was declared but never referenced
+..\App\Task_CAN2.c(550): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_CAN2.c(691): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(706): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(410): warning:  #177-D: function "CAN_Bp2Vcu" was declared but never referenced
+..\App\Task_CAN2.c(433): warning:  #177-D: function "CAN_Bp2Relay" was declared but never referenced
+..\App\Task_CAN2.c(619): warning:  #177-D: function "sendExt_FFF0" was declared but never referenced
+..\App\Task_CAN2.c(631): warning:  #177-D: function "sendExt_FFF1" was declared but never referenced
+..\App\Task_CAN2.c(643): warning:  #177-D: function "sendExt_FFF2" was declared but never referenced
+..\App\Task_CAN2.c(651): warning:  #177-D: function "sendExt_FFF3" was declared but never referenced
+..\App\Task_CAN2.c(659): warning:  #177-D: function "sendExt_FFF4" was declared but never referenced
+compiling Task_EFlash.c...
+..\App\Task_EFlash.c(15): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_EFlash.c(74): warning:  #177-D: variable "bmsize" was declared but never referenced
+compiling appConfig.c...
+..\App\appConfig.c(27): warning:  #550-D: variable "bmsize" was set but never used
+..\App\appConfig.c(56): warning:  #550-D: variable "bpsize" was set but never used
+..\App\appConfig.c(71): warning:  #550-D: variable "bsyssize" was set but never used
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(171): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(173): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(195): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(202): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(209): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(215): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(221): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(243): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(250): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(251): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(253): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(256): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(257): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(272): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(279): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(154): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(158): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(297): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(342): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(334): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(336): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(338): warning:  #177-D: variable "bt" was declared but never referenced
+compiling Task_SysCheck.c...
+..\App\Task_SysCheck.c(63): warning:  #223-D: function "timeDiff" declared implicitly
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 100 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.401V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(171): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(173): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(195): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(202): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(209): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(215): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(221): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(243): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(250): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(251): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(253): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(256): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(257): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(272): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(279): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(154): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(158): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(297): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(342): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(334): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(336): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(338): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Build target 'Pro'
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.395V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.388V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.372V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.383V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+linking...
+Program Size: Code=121536 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.403V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Main.c...
+..\App\Main.c(68): warning:  #223-D: function "updateBP_BM" declared implicitly
+..\App\Main.c(72): warning:  #175-D: subscript out of range
+..\App\Main.c(72): warning:  #167-D: argument of type "int (*)(void *)" is incompatible with parameter of type "void (*)(void *)"
+compiling Task_Test.c...
+..\App\Task_Test.c(42): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\App\Task_Test.c(49): warning:  #223-D: function "LwIP_Periodic_Handle" declared implicitly
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(130): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(186): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(182): warning:  #550-D: variable "idx" was set but never used
+compiling Task_CAN2.c...
+..\App\Task_CAN2.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN2.c(45): warning:  #177-D: variable "sd_qid" was declared but never referenced
+..\App\Task_CAN2.c(46): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(47): warning:  #177-D: variable "wd" was declared but never referenced
+..\App\Task_CAN2.c(48): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_CAN2.c(80): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(81): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(66): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(187): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN2.c(296): warning:  #223-D: function "NVM_SysinfoWrite" declared implicitly
+..\App\Task_CAN2.c(411): warning:  #177-D: variable "txMsg" was declared but never referenced
+..\App\Task_CAN2.c(412): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(434): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(483): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(485): warning:  #177-D: variable "lp" was declared but never referenced
+..\App\Task_CAN2.c(550): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_CAN2.c(691): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(706): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(410): warning:  #177-D: function "CAN_Bp2Vcu" was declared but never referenced
+..\App\Task_CAN2.c(433): warning:  #177-D: function "CAN_Bp2Relay" was declared but never referenced
+..\App\Task_CAN2.c(619): warning:  #177-D: function "sendExt_FFF0" was declared but never referenced
+..\App\Task_CAN2.c(631): warning:  #177-D: function "sendExt_FFF1" was declared but never referenced
+..\App\Task_CAN2.c(643): warning:  #177-D: function "sendExt_FFF2" was declared but never referenced
+..\App\Task_CAN2.c(651): warning:  #177-D: function "sendExt_FFF3" was declared but never referenced
+..\App\Task_CAN2.c(659): warning:  #177-D: function "sendExt_FFF4" was declared but never referenced
+compiling Task_ADC.c...
+..\App\Task_ADC.c(34): warning:  #223-D: function "parseADC" declared implicitly
+..\App\Task_ADC.c(44): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+compiling Task_AVChg.c...
+..\App\Task_AVChg.c(13): warning:  #1295-D: Deprecated declaration isValidCmd - give arg types
+..\App\Task_AVChg.c(40): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(20): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(21): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_AVChg.c(22): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_AVChg.c(69): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(70): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(77): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(78): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(85): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(86): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "crc8" was set but never used
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "pg" was set but never used
+..\App\Task_AVChg.c(113): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_AVChg.c(138): warning:  #223-D: function "setEEData" declared implicitly
+..\App\Task_AVChg.c(147): warning:  #223-D: function "getEEData" declared implicitly
+..\App\Task_AVChg.c(202): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(202): warning:  #550-D: variable "daj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "icrctbj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "xorbytelow" was set but never used
+compiling Task_EFlash.c...
+..\App\Task_EFlash.c(15): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_EFlash.c(74): warning:  #177-D: variable "bmsize" was declared but never referenced
+compiling appConfig.c...
+..\App\appConfig.c(27): warning:  #550-D: variable "bmsize" was set but never used
+..\App\appConfig.c(56): warning:  #550-D: variable "bpsize" was set but never used
+..\App\appConfig.c(71): warning:  #550-D: variable "bsyssize" was set but never used
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(171): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(173): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(195): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(202): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(209): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(215): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(221): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(243): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(250): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(251): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(253): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(256): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(257): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(272): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(279): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(154): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(158): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(297): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(342): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(334): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(336): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(338): warning:  #177-D: variable "bt" was declared but never referenced
+compiling Task_SysCheck.c...
+..\App\Task_SysCheck.c(63): warning:  #223-D: function "timeDiff" declared implicitly
+compiling Task_Wifi.c...
+..\App\Task_Wifi.c(16): warning:  #223-D: function "wifiInit" declared implicitly
+compiling Bsp_Global.c...
+..\BSP\Bsp_Global.c(13): warning:  #223-D: function "DIO_Configuration" declared implicitly
+..\BSP\Bsp_Global.c(21): warning:  #223-D: function "UART4_DMA_Init" declared implicitly
+compiling NVIC.C...
+..\BSP\NVIC.C(86): warning:  #68-D: integer conversion resulted in a change of sign
+compiling stm32f4x7_eth_bsp.c...
+compiling netconf.c...
+compiling stm32f4xx_it.c...
+..\BSP\stm32f4xx_it.c(180): warning:  #223-D: function "Time_Update" declared implicitly
+..\BSP\stm32f4xx_it.c(214): warning:  #223-D: function "LwIP_Pkt_Handle" declared implicitly
+..\BSP\stm32f4xx_it.c(204): warning:  #177-D: variable "err" was declared but never referenced
+compiling httpd.c...
+compiling 24C02.c...
+compiling BSP_GPIO.c...
+compiling bsp_CAN.C...
+..\BSP\bsp_CAN.C(221): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(222): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(240): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(280): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(281): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(305): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(308): warning:  #550-D: variable "err" was set but never used
+compiling BSP_ADC.c...
+..\BSP\BSP_ADC.c(67): warning:  #188-D: enumerated type mixed with another type
+..\BSP\BSP_ADC.c(132): warning:  #177-D: variable "i" was declared but never referenced
+compiling BSP_SCI.c...
+..\BSP\BSP_SCI.c(106): warning:  #550-D: variable "temp" was set but never used
+..\BSP\BSP_SCI.c(107): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(244): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(292): warning:  #550-D: variable "b" was set but never used
+compiling DMA.C...
+..\BSP\DMA.C(51): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(51): warning:  #69-D: integer conversion resulted in truncation
+..\BSP\DMA.C(114): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(114): warning:  #69-D: integer conversion resulted in truncation
+compiling FlashDriver.c...
+compiling SST25VF016B.c...
+compiling BSP_WDG.c...
+compiling ethernetif.c...
+compiling SysTick.C...
+compiling timer.C...
+compiling pageMake.c...
+..\src\pageMake.c(1): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(2): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(75): warning:  #177-D: variable "s" was declared but never referenced
+compiling shed_ctrl.c...
+..\src\shed_ctrl.c(39): warning:  #223-D: function "J1939IdAssb_pgn" declared implicitly
+..\src\shed_ctrl.c(180): warning:  #175-D: subscript out of range
+..\src\shed_ctrl.c(194): warning: C3487E: read from variable 'cd' with offset out of bounds
+compiling mbtcp_task.c...
+..\modbus\mbtcp_task.c(57): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(58): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(61): warning:  #223-D: function "httpd_init" declared implicitly
+..\modbus\mbtcp_task.c(66): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(73): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(74): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(87): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(71): warning:  #550-D: variable "eStatus" was set but never used
+..\modbus\mbtcp_task.c(163): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(164): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(247): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #177-D: variable "rid" was declared but never referenced
+..\modbus\mbtcp_task.c(292): warning:  #177-D: variable "pcb" was declared but never referenced
+..\modbus\mbtcp_task.c(44): warning:  #177-D: variable "usDiscreteStart" was declared but never referenced
+linking...
+Program Size: Code=121532 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 169 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.403V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(171): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(173): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(195): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(202): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(209): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(215): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(221): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(243): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(250): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(251): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(253): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(256): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(257): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(272): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(279): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(154): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(158): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(297): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(342): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(334): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(336): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(338): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121532 RO-data=30496 RW-data=7516 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.395V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+..\App\appBMU.c(111): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\appBMU.c(124): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\appBMU.c(124): error:  #20: identifier "t1" is undefined
+..\App\appBMU.c(124): error:  #254: type name is not allowed
+..\App\appBMU.c(124): error:  #17: expected a "]"
+..\App\appBMU.c(125): error:  #18: expected a ")"
+..\App\appBMU.c(174): warning:  #12-D: parsing restarts here after previous syntax error
+..\App\appBMU.c(174): error:  #127: expected a statement
+..\App\appBMU.c(87): warning:  #177-D: variable "mid" was declared but never referenced
+..\App\appBMU.c(89): warning:  #177-D: variable "cap" was declared but never referenced
+Target not created
+Build target 'Pro'
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+..\App\appBMU.c(111): warning:  #223-D: function "timeDiff" declared implicitly
+linking...
+Program Size: Code=121596 RO-data=30496 RW-data=7532 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 10 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.390V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(171): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(173): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(184): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(195): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(202): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(209): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(215): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(221): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(225): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(243): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(250): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(251): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(253): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(254): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(256): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(257): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(272): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(279): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(154): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(154): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(158): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(297): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(342): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(334): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(336): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(338): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121600 RO-data=30496 RW-data=7532 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 42 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.387V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(136): warning:  #174-D: expression has no effect
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(172): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(174): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(185): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(187): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(196): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(203): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(210): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(212): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(216): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(222): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(226): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(244): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(251): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(252): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(254): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(255): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(257): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(258): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(273): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(275): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(280): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(155): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(155): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(156): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(159): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(160): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(298): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(343): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(335): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(337): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(339): warning:  #177-D: variable "bt" was declared but never referenced
+linking...
+Program Size: Code=121596 RO-data=30496 RW-data=7532 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 43 Warning(s).
+Load "D:\\work\\project\\Keil_ST\\BSC_UC\\project\\Debug\\Pro.AXF" 
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+Set JLink Project File to "D:\work\project\Keil_ST\BSC_UC\project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link V9 compiled Sep  1 2016 18:29:50
+Hardware: V9.40
+S/N : 59408164 
+Feature(s) : RDI, GDB, FlashDL, FlashBP, JFlash 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.396V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 1, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 6000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Build target 'Pro'
+compiling Main.c...
+..\App\Main.c(68): warning:  #223-D: function "updateBP_BM" declared implicitly
+..\App\Main.c(72): warning:  #175-D: subscript out of range
+..\App\Main.c(72): warning:  #167-D: argument of type "int (*)(void *)" is incompatible with parameter of type "void (*)(void *)"
+compiling Task_Test.c...
+..\App\Task_Test.c(42): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\App\Task_Test.c(49): warning:  #223-D: function "LwIP_Periodic_Handle" declared implicitly
+compiling appBMU.c...
+..\App\appBMU.h(51): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(8): warning:  #77-D: this declaration has no storage class or type specifier
+..\App\appBMU.c(26): warning:  #223-D: function "Task_ADC" declared implicitly
+..\App\appBMU.c(13): warning:  #550-D: variable "subIdx" was set but never used
+..\App\appBMU.c(15): warning:  #177-D: variable "ds" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "last_curr" was declared but never referenced
+..\App\appBMU.c(16): warning:  #177-D: variable "now_curr" was declared but never referenced
+..\App\appBMU.c(17): warning:  #177-D: variable "d" was declared but never referenced
+..\App\appBMU.c(18): warning:  #550-D: variable "nid" was set but never used
+..\App\appBMU.c(111): warning:  #223-D: function "timeDiff" declared implicitly
+compiling Task_CAN1.c...
+..\App\Task_CAN1.c(28): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN1.c(57): warning:  #223-D: function "CanopenInit" declared implicitly
+..\App\Task_CAN1.c(79): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(97): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(130): warning:  #513-D: a value of type "void *" cannot be assigned to an entity of type "SDOCallback_t"
+..\App\Task_CAN1.c(44): warning:  #177-D: variable "t_co" was declared but never referenced
+..\App\Task_CAN1.c(46): warning:  #177-D: variable "t_stat" was declared but never referenced
+..\App\Task_CAN1.c(47): warning:  #177-D: variable "tnow" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN1.c(51): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN1.c(55): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN1.c(186): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_CAN1.c(182): warning:  #550-D: variable "idx" was set but never used
+compiling Task_CAN2.c...
+..\App\Task_CAN2.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_CAN2.c(45): warning:  #177-D: variable "sd_qid" was declared but never referenced
+..\App\Task_CAN2.c(46): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(47): warning:  #177-D: variable "wd" was declared but never referenced
+..\App\Task_CAN2.c(48): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_CAN2.c(80): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(81): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_CAN2.c(66): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(187): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "j" was declared but never referenced
+..\App\Task_CAN2.c(251): warning:  #177-D: variable "k" was declared but never referenced
+..\App\Task_CAN2.c(296): warning:  #223-D: function "NVM_SysinfoWrite" declared implicitly
+..\App\Task_CAN2.c(411): warning:  #177-D: variable "txMsg" was declared but never referenced
+..\App\Task_CAN2.c(412): warning:  #177-D: variable "bt" was declared but never referenced
+..\App\Task_CAN2.c(434): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(483): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_CAN2.c(485): warning:  #177-D: variable "lp" was declared but never referenced
+..\App\Task_CAN2.c(550): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_CAN2.c(691): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(706): warning:  #177-D: variable "cid" was declared but never referenced
+..\App\Task_CAN2.c(410): warning:  #177-D: function "CAN_Bp2Vcu" was declared but never referenced
+..\App\Task_CAN2.c(433): warning:  #177-D: function "CAN_Bp2Relay" was declared but never referenced
+..\App\Task_CAN2.c(619): warning:  #177-D: function "sendExt_FFF0" was declared but never referenced
+..\App\Task_CAN2.c(631): warning:  #177-D: function "sendExt_FFF1" was declared but never referenced
+..\App\Task_CAN2.c(643): warning:  #177-D: function "sendExt_FFF2" was declared but never referenced
+..\App\Task_CAN2.c(651): warning:  #177-D: function "sendExt_FFF3" was declared but never referenced
+..\App\Task_CAN2.c(659): warning:  #177-D: function "sendExt_FFF4" was declared but never referenced
+compiling Task_ADC.c...
+..\App\Task_ADC.c(34): warning:  #223-D: function "parseADC" declared implicitly
+..\App\Task_ADC.c(44): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+compiling Task_AVChg.c...
+..\App\Task_AVChg.c(13): warning:  #1295-D: Deprecated declaration isValidCmd - give arg types
+..\App\Task_AVChg.c(40): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(20): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(21): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_AVChg.c(22): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_AVChg.c(69): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(70): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(77): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(78): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(85): warning:  #167-D: argument of type "volatile unsigned char *" is incompatible with parameter of type "uint8_t *"
+..\App\Task_AVChg.c(86): warning:  #1293-D: assignment in condition
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "crc8" was set but never used
+..\App\Task_AVChg.c(50): warning:  #550-D: variable "pg" was set but never used
+..\App\Task_AVChg.c(113): warning:  #187-D: use of "=" where "==" may have been intended
+..\App\Task_AVChg.c(138): warning:  #223-D: function "setEEData" declared implicitly
+..\App\Task_AVChg.c(147): warning:  #223-D: function "getEEData" declared implicitly
+..\App\Task_AVChg.c(202): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_AVChg.c(202): warning:  #550-D: variable "daj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "icrctbj" was set but never used
+..\App\Task_AVChg.c(218): warning:  #550-D: variable "xorbytelow" was set but never used
+compiling Task_EFlash.c...
+..\App\Task_EFlash.c(15): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_EFlash.c(74): warning:  #177-D: variable "bmsize" was declared but never referenced
+compiling appConfig.c...
+..\App\appConfig.c(27): warning:  #550-D: variable "bmsize" was set but never used
+..\App\appConfig.c(56): warning:  #550-D: variable "bpsize" was set but never used
+..\App\appConfig.c(71): warning:  #550-D: variable "bsyssize" was set but never used
+compiling Task_main.c...
+..\App\Task_main.c(23): warning:  #1295-D: Deprecated declaration isCriticalFaultExist - give arg types
+..\App\Task_main.c(24): warning:  #1295-D: Deprecated declaration isAlarmExist - give arg types
+..\App\Task_main.c(25): warning:  #1295-D: Deprecated declaration isHWShutdownExist - give arg types
+..\App\Task_main.c(57): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(136): warning:  #174-D: expression has no effect
+..\App\Task_main.c(31): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(31): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(32): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(35): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(36): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(173): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(175): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(186): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(188): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(197): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(204): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(211): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(213): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(217): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(223): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(227): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(245): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(252): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(253): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(255): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(256): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(258): warning:  #223-D: function "NVM_AllInfoWrite" declared implicitly
+..\App\Task_main.c(259): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(274): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(276): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(281): warning:  #188-D: enumerated type mixed with another type
+..\App\Task_main.c(156): warning:  #177-D: variable "os_err" was declared but never referenced
+..\App\Task_main.c(156): warning:  #177-D: variable "i" was declared but never referenced
+..\App\Task_main.c(156): warning:  #177-D: variable "isCmdIn" was declared but never referenced
+..\App\Task_main.c(157): warning:  #177-D: variable "RxMSG" was declared but never referenced
+..\App\Task_main.c(160): warning:  #177-D: variable "nowTime" was declared but never referenced
+..\App\Task_main.c(161): warning:  #177-D: variable "sdData" was declared but never referenced
+..\App\Task_main.c(299): warning:  #177-D: variable "a" was declared but never referenced
+..\App\Task_main.c(344): warning:  #223-D: function "timeDiff" declared implicitly
+..\App\Task_main.c(336): warning:  #177-D: variable "lastCmd" was declared but never referenced
+..\App\Task_main.c(338): warning:  #550-D: variable "lp" was set but never used
+..\App\Task_main.c(340): warning:  #177-D: variable "bt" was declared but never referenced
+compiling Task_SysCheck.c...
+..\App\Task_SysCheck.c(63): warning:  #223-D: function "timeDiff" declared implicitly
+compiling Task_Wifi.c...
+..\App\Task_Wifi.c(16): warning:  #223-D: function "wifiInit" declared implicitly
+compiling Bsp_Global.c...
+..\BSP\Bsp_Global.c(13): warning:  #223-D: function "DIO_Configuration" declared implicitly
+..\BSP\Bsp_Global.c(21): warning:  #223-D: function "UART4_DMA_Init" declared implicitly
+compiling NVIC.C...
+..\BSP\NVIC.C(86): warning:  #68-D: integer conversion resulted in a change of sign
+compiling stm32f4x7_eth_bsp.c...
+compiling netconf.c...
+compiling stm32f4xx_it.c...
+..\BSP\stm32f4xx_it.c(180): warning:  #223-D: function "Time_Update" declared implicitly
+..\BSP\stm32f4xx_it.c(214): warning:  #223-D: function "LwIP_Pkt_Handle" declared implicitly
+..\BSP\stm32f4xx_it.c(204): warning:  #177-D: variable "err" was declared but never referenced
+compiling httpd.c...
+compiling 24C02.c...
+compiling BSP_GPIO.c...
+compiling bsp_CAN.C...
+..\BSP\bsp_CAN.C(221): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(222): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(240): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(280): warning:  #177-D: variable "i" was declared but never referenced
+..\BSP\bsp_CAN.C(281): warning:  #550-D: variable "err" was set but never used
+..\BSP\bsp_CAN.C(305): warning:  #177-D: variable "transmit_mailbox" was declared but never referenced
+..\BSP\bsp_CAN.C(308): warning:  #550-D: variable "err" was set but never used
+compiling BSP_ADC.c...
+..\BSP\BSP_ADC.c(67): warning:  #188-D: enumerated type mixed with another type
+..\BSP\BSP_ADC.c(132): warning:  #177-D: variable "i" was declared but never referenced
+compiling BSP_SCI.c...
+..\BSP\BSP_SCI.c(106): warning:  #550-D: variable "temp" was set but never used
+..\BSP\BSP_SCI.c(107): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(244): warning:  #550-D: variable "err" was set but never used
+..\BSP\BSP_SCI.c(292): warning:  #550-D: variable "b" was set but never used
+compiling DMA.C...
+..\BSP\DMA.C(51): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(51): warning:  #69-D: integer conversion resulted in truncation
+..\BSP\DMA.C(114): warning:  #188-D: enumerated type mixed with another type
+..\BSP\DMA.C(114): warning:  #69-D: integer conversion resulted in truncation
+compiling FlashDriver.c...
+compiling SST25VF016B.c...
+compiling BSP_WDG.c...
+compiling BSP_wifi.c...
+..\BSP\BSP_wifi.c(46): warning:  #223-D: function "OSIntEnter" declared implicitly
+..\BSP\BSP_wifi.c(53): warning:  #223-D: function "OSIntExit" declared implicitly
+..\BSP\BSP_wifi.c(121): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\BSP\BSP_wifi.c(158): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+compiling M_Delay_P.c...
+compiling misc.c...
+compiling stm32f4xx_adc.c...
+compiling stm32f4xx_can.c...
+compiling stm32f4xx_crc.c...
+compiling stm32f4xx_cryp.c...
+compiling stm32f4xx_cryp_aes.c...
+compiling stm32f4xx_cryp_des.c...
+compiling stm32f4xx_cryp_tdes.c...
+compiling stm32f4xx_dac.c...
+compiling stm32f4xx_dbgmcu.c...
+compiling stm32f4xx_dcmi.c...
+compiling stm32f4xx_dma.c...
+compiling stm32f4xx_exti.c...
+compiling stm32f4xx_flash.c...
+compiling stm32f4xx_fsmc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_hash.c...
+compiling stm32f4xx_hash_md5.c...
+compiling stm32f4xx_hash_sha1.c...
+compiling stm32f4xx_i2c.c...
+compiling stm32f4xx_iwdg.c...
+compiling stm32f4xx_pwr.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_rng.c...
+compiling stm32f4xx_rtc.c...
+compiling stm32f4xx_sdio.c...
+compiling stm32f4xx_spi.c...
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_tim.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_wwdg.c...
+compiling system_stm32f4xx.c...
+compiling os_cpu_c.c...
+compiling os_dbg.c...
+compiling os_core.c...
+compiling os_flag.c...
+compiling os_mbox.c...
+compiling os_mem.c...
+compiling os_mutex.c...
+compiling os_q.c...
+compiling os_sem.c...
+compiling os_task.c...
+compiling os_time.c...
+compiling os_tmr.c...
+compiling api_lib.c...
+compiling api_msg.c...
+compiling err.c...
+compiling netbuf.c...
+compiling netdb.c...
+compiling netifapi.c...
+compiling sockets.c...
+compiling tcpip.c...
+compiling autoip.c...
+compiling icmp.c...
+compiling igmp.c...
+compiling inet.c...
+compiling inet_chksum.c...
+compiling ip.c...
+compiling ip_addr.c...
+compiling ip_frag.c...
+compiling dhcp.c...
+compiling dns.c...
+compiling init.c...
+compiling mem.c...
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\mem.c(184): warning:  #550-D: variable "mem_sem" was set but never used
+compiling memp.c...
+compiling netif.c...
+compiling pbuf.c...
+compiling raw.c...
+compiling stats.c...
+compiling sys.c...
+compiling tcp.c...
+compiling tcp_in.c...
+compiling tcp_out.c...
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\tcp_out.c(465): warning:  #550-D: variable "tcphdr" was set but never used
+..\Utilities\Third_Party\lwip_v1.3.2\src\core\tcp_out.c(935): warning:  #550-D: variable "tcphdr" was set but never used
+compiling udp.c...
+compiling etharp.c...
+compiling loopif.c...
+compiling ethernetif.c...
+compiling stm32f4x7_eth.c...
+compiling can_stm32.c...
+compiling CANOpenObjDictConfig.c...
+..\CANOpen\CANOpenObjDictConfig.c(253): warning:  #1-D: last line of file ends without a newline
+compiling dcf.c...
+compiling emcy.c...
+compiling lifegrd.c...
+compiling lss.c...
+compiling nmtMaster.c...
+compiling nmtSlave.c...
+compiling objacces.c...
+compiling pdo.c...
+compiling sdo.c...
+..\CANOpen\sdo.c(1209): warning:  #223-D: function "parseBroadMsg" declared implicitly
+compiling SEGGER_RTT.c...
+compiling SEGGER_RTT_printf.c...
+..\CANOpen\SEGGER_RTT_printf.c(300): warning:  #111-D: statement is unreachable
+compiling states.c...
+compiling sync.c...
+compiling timer_stm32.c...
+compiling CO_timer.c...
+compiling ObjDict.c...
+compiling SysTick.C...
+compiling timer.C...
+compiling GlobalVar.c...
+compiling pageMake.c...
+..\src\pageMake.c(1): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(2): warning:  #14-D: extra text after expected end of preprocessing directive
+..\src\pageMake.c(75): warning:  #177-D: variable "s" was declared but never referenced
+compiling shed_ctrl.c...
+..\src\shed_ctrl.c(39): warning:  #223-D: function "J1939IdAssb_pgn" declared implicitly
+..\src\shed_ctrl.c(180): warning:  #175-D: subscript out of range
+..\src\shed_ctrl.c(194): warning: C3487E: read from variable 'cd' with offset out of bounds
+compiling mbfunccoils.c...
+compiling mbfuncdiag.c...
+compiling mbfuncdisc.c...
+compiling mbfuncholding.c...
+compiling mbfuncinput.c...
+compiling mbfuncother.c...
+compiling mbutils.c...
+compiling portevent.c...
+compiling portserial.c...
+..\modbus\port\portserial.c(71): warning:  #177-D: function "prvvUARTTxReadyISR" was declared but never referenced
+..\modbus\port\portserial.c(81): warning:  #177-D: function "prvvUARTRxISR" was declared but never referenced
+compiling porttimer.c...
+..\modbus\port\porttimer.c(56): warning:  #177-D: function "prvvTIMERExpiredISR" was declared but never referenced
+compiling mbtcp.c...
+compiling mb.c...
+compiling porttcp.c...
+..\modbus\port\porttcp.c(250): warning:  #223-D: function "memcpy" declared implicitly
+compiling mbtcp_task.c...
+..\modbus\mbtcp_task.c(57): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(58): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(61): warning:  #223-D: function "httpd_init" declared implicitly
+..\modbus\mbtcp_task.c(66): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(73): warning:  #223-D: function "ETH_BSP_Config" declared implicitly
+..\modbus\mbtcp_task.c(74): warning:  #223-D: function "LwIP_Init" declared implicitly
+..\modbus\mbtcp_task.c(87): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+..\modbus\mbtcp_task.c(71): warning:  #550-D: variable "eStatus" was set but never used
+..\modbus\mbtcp_task.c(163): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(164): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(247): warning:  #550-D: variable "iRegIndex" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #550-D: variable "bufId" was set but never used
+..\modbus\mbtcp_task.c(248): warning:  #177-D: variable "rid" was declared but never referenced
+..\modbus\mbtcp_task.c(292): warning:  #177-D: variable "pcb" was declared but never referenced
+..\modbus\mbtcp_task.c(44): warning:  #177-D: variable "usDiscreteStart" was declared but never referenced
+compiling co_candebug.c...
+..\colib\src\co_candebug.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_cobhandler.c...
+..\colib\src\co_cobhandler.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_commtask.c...
+..\colib\src\co_commtask.c(102): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_dynod.c...
+..\colib\src\co_dynod.c(27): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_emcy.c...
+..\colib\src\co_emcy.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_errctrl.c...
+..\colib\src\co_errctrl.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_event.c...
+..\colib\src\co_event.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_led.c...
+..\colib\src\co_led.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_lss.c...
+..\colib\src\co_lss.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_lssmaster.c...
+..\colib\src\co_lssmaster.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmt.c...
+..\colib\src\co_nmt.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmtmaster.c...
+..\colib\src\co_nmtmaster.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmtslave.c...
+..\colib\src\co_nmtslave.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_odaccess.c...
+..\colib\src\co_odaccess.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_pdo.c...
+..\colib\src\co_pdo.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_queue.c...
+..\colib\src\co_queue.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoclient.c...
+..\colib\src\co_sdoclient.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoqueue.c...
+..\colib\src\co_sdoqueue.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoserv.c...
+..\colib\src\co_sdoserv.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sleep.c...
+..\colib\src\co_sleep.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_stackinit.c...
+..\colib\src\co_stackinit.c(27): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_store.c...
+..\colib\src\co_store.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sync.c...
+..\colib\src\co_sync.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_time.c...
+..\colib\src\co_time.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_timer.c...
+..\colib\src\co_timer.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_user.c...
+..\colib\src\co_user.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_can_generic.c...
+..\codrv\generic\codrv_can_generic.c(98): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_canbittiming.c...
+..\codrv\generic\codrv_canbittiming.c(26): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_cpu_generic.c...
+..\codrv\generic\codrv_cpu_generic.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_error.c...
+..\codrv\generic\codrv_error.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling can_printf.c...
+..\codrv\common\can_printf.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_battery.c...
+..\colib\energybus\eb_battery.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_debug.c...
+..\colib\energybus\eb_debug.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_eeprom.c...
+..\colib\energybus\eb_eeprom.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_framework.c...
+..\colib\energybus\eb_framework.c(94): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_indication.c...
+..\colib\energybus\eb_indication.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_state.c...
+..\colib\energybus\eb_state.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+Target not created
+Build target 'Pro'
+compiling CO_timer.c...
+compiling co_candebug.c...
+..\colib\src\co_candebug.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_cobhandler.c...
+..\colib\src\co_cobhandler.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_commtask.c...
+..\colib\src\co_commtask.c(102): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_dynod.c...
+..\colib\src\co_dynod.c(27): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_emcy.c...
+..\colib\src\co_emcy.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_errctrl.c...
+..\colib\src\co_errctrl.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_event.c...
+..\colib\src\co_event.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_led.c...
+..\colib\src\co_led.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_lss.c...
+..\colib\src\co_lss.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_lssmaster.c...
+..\colib\src\co_lssmaster.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmt.c...
+..\colib\src\co_nmt.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmtmaster.c...
+..\colib\src\co_nmtmaster.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_nmtslave.c...
+..\colib\src\co_nmtslave.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_odaccess.c...
+..\colib\src\co_odaccess.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_pdo.c...
+..\colib\src\co_pdo.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_queue.c...
+..\colib\src\co_queue.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoclient.c...
+..\colib\src\co_sdoclient.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoqueue.c...
+..\colib\src\co_sdoqueue.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sdoserv.c...
+..\colib\src\co_sdoserv.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sleep.c...
+..\colib\src\co_sleep.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_stackinit.c...
+..\colib\src\co_stackinit.c(27): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_store.c...
+..\colib\src\co_store.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_sync.c...
+..\colib\src\co_sync.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_time.c...
+..\colib\src\co_time.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_timer.c...
+..\colib\src\co_timer.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling co_user.c...
+..\colib\src\co_user.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_can_generic.c...
+..\codrv\generic\codrv_can_generic.c(98): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_canbittiming.c...
+..\codrv\generic\codrv_canbittiming.c(26): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_cpu_generic.c...
+..\codrv\generic\codrv_cpu_generic.c(32): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling codrv_error.c...
+..\codrv\generic\codrv_error.c(28): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling can_printf.c...
+..\codrv\common\can_printf.c(31): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_battery.c...
+..\colib\energybus\eb_battery.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_debug.c...
+..\colib\energybus\eb_debug.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_eeprom.c...
+..\colib\energybus\eb_eeprom.c(29): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_framework.c...
+..\colib\energybus\eb_framework.c(94): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_indication.c...
+..\colib\energybus\eb_indication.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+compiling eb_state.c...
+..\colib\energybus\eb_state.c(30): error:  #5: cannot open source input file "gen_define.h": No such file or directory
+Target not created
+Build target 'Pro'
+compiling CO_timer.c...
+compiling co_candebug.c...
+compiling co_cobhandler.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_commtask.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_dynod.c...
+compiling co_emcy.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_errctrl.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(63): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(107): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(240): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(242): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(268): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_errctrl.c(275): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(278): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_errctrl.c(275): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(418): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(418): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(421): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(423): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(520): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(960): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_event.c...
+compiling co_led.c...
+compiling co_lss.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(109): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(462): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_lss.c(463): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_lss.c(498): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_lssmaster.c...
+compiling co_nmt.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_nmtmaster.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_nmtslave.c...
+compiling co_odaccess.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_pdo.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_pdo.c(2020): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_pdo.c(2023): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_pdo.c(2025): error:  #20: identifier "CO_TIMER_ATTR_ROUNDDOWN_CYCLIC" is undefined
+..\colib\src\co_pdo.c(2023): warning:  #188-D: enumerated type mixed with another type
+compiling co_queue.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_queue.c(395): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_queue.c(395): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_queue.c(561): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_queue.c(561): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_queue.c(953): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_queue.c(955): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+compiling co_sdoclient.c...
+compiling co_sdoqueue.c...
+compiling co_sdoserv.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_sleep.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(124): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(125): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(195): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_sleep.c(303): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(304): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_sleep.c(334): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(335): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_sleep.c(441): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(442): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+compiling co_stackinit.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_sdoclient.h(65): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_sdoclient.h(67): error:  #40: expected an identifier
+compiling co_store.c...
+compiling co_sync.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sync.c(126): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sync.c(352): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sync.c(354): error:  #20: identifier "CO_TIMER_ATTR_ROUNDDOWN_CYCLIC" is undefined
+..\colib\src\co_sync.c(352): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_sync.c(366): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_time.c...
+compiling co_timer.c...
+..\colib\src\co_timer.c(51): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(62): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(81): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(83): error:  #20: identifier "CO_TIMER_FCT_T" is undefined
+..\colib\src\co_timer.c(85): error:  #20: identifier "CO_TIMER_ATTR_T" is undefined
+..\colib\src\co_timer.c(103): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_timer.c(106): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(107): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_timer.c(108): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_timer.c(110): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(113): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(114): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(117): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(118): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(119): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(140): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(139): error:  #159: declaration is incompatible with previous "coTimerStop" (declared at line 103)
+..\colib\src\co_timer.c(143): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(143): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(144): error:  #20: identifier "pLast" is undefined
+..\colib\src\co_timer.c(179): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(182): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(182): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(205): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(206): error:  #20: identifier "CO_TIMER_ATTR_T" is undefined
+..\colib\src\co_timer.c(209): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(225): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(228): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(228): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(229): error:  #20: identifier "pLast" is undefined
+..\colib\src\co_timer.c(231): error:  #132: expression must have pointer-to-struct-or-union type
+compiling co_user.c...
+compiling codrv_can_generic.c...
+..\codrv\generic\codrv_can_generic.c(629): warning:  #177-D: variable "pError" was declared but never referenced
+..\codrv\generic\codrv_can_generic.c(161): warning:  #177-D: variable "pCan" was declared but never referenced
+compiling codrv_canbittiming.c...
+compiling codrv_cpu_generic.c...
+..\codrv\generic\codrv_cpu_generic.c(174): warning:  #223-D: function "coTimerTick" declared implicitly
+compiling codrv_error.c...
+compiling can_printf.c...
+compiling eb_battery.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling eb_debug.c...
+compiling eb_eeprom.c...
+compiling eb_framework.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling eb_indication.c...
+compiling eb_state.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\energybus\eb_state.c(136): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\energybus\eb_state.c(188): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\energybus\eb_state.c(189): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\energybus\eb_state.c(499): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\energybus\eb_state.c(500): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+Target not created
+Build target 'Pro'
+compiling CO_timer.c...
+compiling co_cobhandler.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_commtask.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_emcy.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_errctrl.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(63): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(107): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(240): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(242): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(268): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_errctrl.c(275): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(278): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_errctrl.c(275): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(418): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(418): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(421): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(423): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(520): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(960): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_lss.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(109): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(462): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_lss.c(463): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_lss.c(498): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_nmt.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_nmtmaster.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_odaccess.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_pdo.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_pdo.c(2020): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_pdo.c(2023): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_pdo.c(2025): error:  #20: identifier "CO_TIMER_ATTR_ROUNDDOWN_CYCLIC" is undefined
+..\colib\src\co_pdo.c(2023): warning:  #188-D: enumerated type mixed with another type
+compiling co_queue.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_queue.c(395): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_queue.c(395): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_queue.c(561): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_queue.c(561): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_queue.c(953): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_queue.c(955): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+compiling co_sdoserv.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_sleep.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(124): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(125): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sleep.c(195): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_sleep.c(303): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(304): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_sleep.c(334): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(335): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_sleep.c(441): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sleep.c(442): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+compiling co_stackinit.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_sdoclient.h(65): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_sdoclient.h(67): error:  #40: expected an identifier
+compiling co_sync.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sync.c(126): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_sync.c(352): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_sync.c(354): error:  #20: identifier "CO_TIMER_ATTR_ROUNDDOWN_CYCLIC" is undefined
+..\colib\src\co_sync.c(352): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_sync.c(366): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_timer.c...
+..\colib\src\co_timer.c(51): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(62): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(81): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(83): error:  #20: identifier "CO_TIMER_FCT_T" is undefined
+..\colib\src\co_timer.c(85): error:  #20: identifier "CO_TIMER_ATTR_T" is undefined
+..\colib\src\co_timer.c(103): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_timer.c(106): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(107): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_timer.c(108): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_timer.c(110): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(113): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(114): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(117): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(118): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(119): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(140): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(139): error:  #159: declaration is incompatible with previous "coTimerStop" (declared at line 103)
+..\colib\src\co_timer.c(143): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(143): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(144): error:  #20: identifier "pLast" is undefined
+..\colib\src\co_timer.c(179): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(182): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(182): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(205): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(206): error:  #20: identifier "CO_TIMER_ATTR_T" is undefined
+..\colib\src\co_timer.c(209): error:  #132: expression must have pointer-to-struct-or-union type
+..\colib\src\co_timer.c(225): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(228): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_timer.c(228): error:  #20: identifier "pT" is undefined
+..\colib\src\co_timer.c(229): error:  #20: identifier "pLast" is undefined
+..\colib\src\co_timer.c(231): error:  #132: expression must have pointer-to-struct-or-union type
+compiling eb_battery.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling eb_framework.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling eb_state.c...
+..\colib\src\ico_cobhandler.h(68): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\energybus\eb_state.c(136): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\energybus\eb_state.c(188): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\energybus\eb_state.c(189): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\energybus\eb_state.c(499): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\energybus\eb_state.c(500): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+Target not created
+Build target 'Pro'
+compiling CO_timer.c...
+compiling co_cobhandler.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_commtask.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_emcy.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_errctrl.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(63): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(107): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_errctrl.c(240): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(242): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(268): warning:  #223-D: function "coTimerStop" declared implicitly
+..\colib\src\co_errctrl.c(275): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(278): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_errctrl.c(275): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(418): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(418): warning:  #188-D: enumerated type mixed with another type
+..\colib\src\co_errctrl.c(421): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_errctrl.c(423): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP" is undefined
+..\colib\src\co_errctrl.c(520): warning:  #223-D: function "coTimerIsActive" declared implicitly
+..\colib\src\co_errctrl.c(960): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_lss.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(109): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\co_lss.c(462): warning:  #223-D: function "coTimerStart" declared implicitly
+..\colib\src\co_lss.c(463): error:  #20: identifier "CO_TIMER_ATTR_ROUNDUP_CYCLIC" is undefined
+..\colib\src\co_lss.c(498): warning:  #223-D: function "coTimerStop" declared implicitly
+compiling co_nmt.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+..\colib\src\ico_pdo.h(59): error:  #20: identifier "CO_TIMER_T" is undefined
+compiling co_nmtmaster.c...
+..\colib\src\ico_cobhandler.h(69): error:  #20: identifier "CO_TIMER_T" is undefined
+Project build/rebuild aborted.
+Target not created
+Build target 'Pro'
+linking...
+Program Size: Code=121644 RO-data=30496 RW-data=7532 ZI-data=94444  
+FromELF: creating hex file...
+User command #1: D:\Keil_v5\ARM\BIN40\fromelf.exe --bin --output ./BIN/pro.bin ./Debug/pro.axf
+".\Debug\Pro.axf" - 0 Error(s), 0 Warning(s).

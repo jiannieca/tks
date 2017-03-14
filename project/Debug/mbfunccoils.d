@@ -1,0 +1,12 @@
+.\Debug\mbfunccoils.o: ..\modbus\functions\mbfunccoils.c
+.\Debug\mbfunccoils.o: d:\Keil_v5\ARM\RV31\Inc\stdlib.h
+.\Debug\mbfunccoils.o: d:\Keil_v5\ARM\RV31\Inc\string.h
+.\Debug\mbfunccoils.o: ..\modbus\port\port.h
+.\Debug\mbfunccoils.o: d:\Keil_v5\ARM\RV31\Inc\assert.h
+.\Debug\mbfunccoils.o: d:\Keil_v5\ARM\RV31\Inc\inttypes.h
+.\Debug\mbfunccoils.o: d:\Keil_v5\ARM\RV31\Inc\stdint.h
+.\Debug\mbfunccoils.o: ..\modbus\include\mb.h
+.\Debug\mbfunccoils.o: ..\modbus\include\mbport.h
+.\Debug\mbfunccoils.o: ..\modbus\include\mbproto.h
+.\Debug\mbfunccoils.o: ..\modbus\include\mbframe.h
+.\Debug\mbfunccoils.o: ..\modbus\include\mbconfig.h

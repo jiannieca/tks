@@ -1,0 +1,9 @@
+.\Debug\codrv_can_generic.o: ..\codrv\generic\codrv_can_generic.c
+.\Debug\codrv_can_generic.o: d:\Keil_v5\ARM\RV31\Inc\stddef.h
+.\Debug\codrv_can_generic.o: d:\Keil_v5\ARM\RV31\Inc\stdio.h
+.\Debug\codrv_can_generic.o: ..\colib\inc\gen_define.h
+.\Debug\codrv_can_generic.o: ..\colib\inc\co_datatype.h
+.\Debug\codrv_can_generic.o: ..\colib\inc\co_drv.h
+.\Debug\codrv_can_generic.o: ..\codrv\generic\codrv_error.h
+.\Debug\codrv_can_generic.o: ..\colib\inc\co_commtask.h
+.\Debug\codrv_can_generic.o: ..\codrv\generic\codrv_can_generic.h

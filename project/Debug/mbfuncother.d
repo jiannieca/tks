@@ -1,0 +1,12 @@
+.\Debug\mbfuncother.o: ..\modbus\functions\mbfuncother.c
+.\Debug\mbfuncother.o: d:\Keil_v5\ARM\RV31\Inc\stdlib.h
+.\Debug\mbfuncother.o: d:\Keil_v5\ARM\RV31\Inc\string.h
+.\Debug\mbfuncother.o: ..\modbus\port\port.h
+.\Debug\mbfuncother.o: d:\Keil_v5\ARM\RV31\Inc\assert.h
+.\Debug\mbfuncother.o: d:\Keil_v5\ARM\RV31\Inc\inttypes.h
+.\Debug\mbfuncother.o: d:\Keil_v5\ARM\RV31\Inc\stdint.h
+.\Debug\mbfuncother.o: ..\modbus\include\mb.h
+.\Debug\mbfuncother.o: ..\modbus\include\mbport.h
+.\Debug\mbfuncother.o: ..\modbus\include\mbproto.h
+.\Debug\mbfuncother.o: ..\modbus\include\mbframe.h
+.\Debug\mbfuncother.o: ..\modbus\include\mbconfig.h

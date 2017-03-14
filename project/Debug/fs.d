@@ -1,0 +1,12 @@
+.\Debug\fs.o: ..\BSP\fs.c
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\src\include\lwip/opt.h
+.\Debug\fs.o: ..\BSP\lwipopts.h
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\src\include\lwip/debug.h
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\src\include\lwip/arch.h
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\port\STM32F4x7\arch/cc.h
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\port\STM32F4x7\arch/cpu.h
+.\Debug\fs.o: d:\Keil\ARM\RV31\Inc\stdio.h
+.\Debug\fs.o: ..\Utilities\Third_Party\lwip_v1.3.2\src\include\lwip/def.h
+.\Debug\fs.o: ..\inc\fs.h
+.\Debug\fs.o: ..\BSP\fsdata.h
+.\Debug\fs.o: d:\Keil\ARM\RV31\Inc\string.h

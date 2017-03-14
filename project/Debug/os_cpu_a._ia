@@ -1,0 +1,1 @@
+--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I d:\Keil_v5\ARM\RV31\Inc -I d:\Keil_v5\ARM\CMSIS\Include -I d:\Keil_v5\ARM\Inc\ST\STM32F4xx --list ".\os_cpu_a.lst" --xref -o ".\Debug\os_cpu_a.o" --depend ".\Debug\os_cpu_a.d" "..\UCOS\Port\os_cpu_a.asm"
