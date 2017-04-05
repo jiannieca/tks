@@ -10,26 +10,22 @@ OS_STK Stk_Task_LED[TASK_TEST_LED_STK_SIZE];
 void I2C_Test(void);
 
 /***********************************************************************
-函数名称：void Task_LED(void *pdata)
-功    能：
-输入参数：
-输出参数：
-编写时间：
-编 写 人：
-注    意：
+
+void Task_LED(void *pdata)
+
 ***********************************************************************/
 void Task_LED(void *pdata)
 {		 
-    while(1)
+   while(1)
 	{
-		OSTimeDlyHMSM(0, 0, 0, 100);//
-	//	GPIO_ToggleBits(LED1);
-		OSTimeDlyHMSM(0, 0, 0, 100);//
-//		GPIO_ToggleBits(LED2);
-		OSTimeDlyHMSM(0, 0, 0, 100);//
-//		GPIO_ToggleBits(LED3);
-		OSTimeDlyHMSM(0, 0, 0, 100);//
-//		GPIO_ToggleBits(LED4);
+		OSTimeDlyHMSM(0, 0, 0, 100);
+		//	GPIO_ToggleBits(LED1);
+		OSTimeDlyHMSM(0, 0, 0, 100);
+		//	GPIO_ToggleBits(LED2);
+		OSTimeDlyHMSM(0, 0, 0, 100);
+		//	GPIO_ToggleBits(LED3);
+		OSTimeDlyHMSM(0, 0, 0, 100);
+		//	GPIO_ToggleBits(LED4);
 	}
 }
 /***********************************************************************

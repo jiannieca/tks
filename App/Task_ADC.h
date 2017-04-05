@@ -12,9 +12,9 @@ typedef struct{
 	UNS16 V_5VOut; //mv
 	UNS16 V_12VOut; //mv
 	UNS16 I_curr; //mA
-	UNS16 T_1; //0.1C
-	UNS16 T_2; //0.1C
-	UNS16 T_3; //0.1C
+	INT16 T_1; //0.1C
+	INT16 T_2; //0.1C
+	INT16 T_3; //0.1C
 }AD_RESULT;
 extern AD_RESULT ad_res;
 

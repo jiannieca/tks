@@ -16,6 +16,10 @@ uint32_t Temprature_Table[30]={2985,2963,2924,2888,2828,
 1549,1391,1268,1127,1019,
 899,808,709,636,558,
 499,438,392,344,182};
+uint32_t temp_table_JT103[18]={3987,3905,3777,3590,3323, 
+	3009,2636,2243,1857,1505,
+	1254,948,745,585,460,
+	363,289,231};
 int lookUpTable(uint32_t *ptTbl, UINT8 tblLen, int valMin,UINT8 elmtGap,uint32_t value);
 
 int lookUpTable_UP(uint32_t *ptTbl, UINT8 tblLen, int valMin,UINT8 elmtGap,uint32_t value);
@@ -44,14 +48,14 @@ parseADC(UNS8 ch,UNS16 val){
 	ft=(float)ADC_RCVTab[ch]*3.3*1000/4096;
 	switch(ch){
 		case 0:
-			
-			ad_res.T_1=lookUpTable((uint32_t *)&Temprature_Table, 30, -40,5,ADC_RCVTab[0]);
+			//ADC 1  ouput is 2.833V for some reason. should be 3.3V
+			ad_res.T_1=lookUpTable((uint32_t *)&temp_table_JT103, 18, -50,10,(UINT16)((UINT32)ADC_RCVTab[0]*208/195));
 			break;
 		case 1:
-			ad_res.T_2=lookUpTable((uint32_t *)&Temprature_Table, 30, -40,5,ADC_RCVTab[1]);
+			ad_res.T_2=lookUpTable((uint32_t *)&temp_table_JT103, 18, -50,10,ADC_RCVTab[1]);
 			break;
 		case 2:
-			ad_res.T_3=lookUpTable((uint32_t *)&Temprature_Table, 30, -40,5,ADC_RCVTab[2]);
+			ad_res.T_3=lookUpTable((uint32_t *)&temp_table_JT103, 18, -50,10,ADC_RCVTab[2]);
 			break;
 		case 3: 	//channel 6, PA6, DC battery voltage
 			ft *=21;
@@ -88,11 +92,11 @@ int lookUpTable(uint32_t *ptTbl, UINT8 tblLen, int valMin,UINT8 elmtGap,uint32_t
 	 int intTemp;
 	  i=valMin;
 	  j=valMin+ (int)(tblLen-1)*elmtGap;
-  tem=*ptTbl;
-count=*ptTbl;
-count=ptTbl[0];
-tem=*(ptTbl+tblLen-1);
-tem=*(ptTbl+1);
+  	tem=*ptTbl;
+	count=*ptTbl;
+	count=ptTbl[0];
+	tem=*(ptTbl+tblLen-1);
+	tem=*(ptTbl+1);
 	if(value> *ptTbl){
 	      intTemp= valMin-5;
       }else  if (value<*(ptTbl+tblLen-1)){
@@ -105,12 +109,13 @@ tem=*(ptTbl+1);
 		    index_table_k=(index_table_i+index_table_j)/2;
 		    k=index_table_k*elmtGap+valMin;
 		    if (elmtGap>=j-i){
-		   		tem=i+(float)(Temprature_Table[index_table_i]-value)/(float)(Temprature_Table[index_table_i]-Temprature_Table[index_table_j])*elmtGap;
+		   		//tem=i+(float)(Temprature_Table[index_table_i]-value)/(float)(Temprature_Table[index_table_i]-Temprature_Table[index_table_j])*elmtGap;
+				tem=i+(float)(*(ptTbl+index_table_i)-value)/(float)(*(ptTbl+index_table_i)-*(ptTbl+index_table_j))*elmtGap;
 				intTemp=tem;
 				break;
-		    }else if  (value>Temprature_Table[index_table_k]) {
+		    }else if  (value>*(ptTbl+index_table_k)) {
 		   	   j=k;
-		    } else if (value<Temprature_Table[index_table_k]){
+		    } else if (value<*(ptTbl+index_table_k)){
 			     i=k;
 		    }else {    // it's equal to the mid-value
 		      tem=k;
@@ -130,9 +135,9 @@ long tbl[11];
 	 uint32_t count=0;
 	 float tem;
 	 int intTemp;
-for(i=0;i<11;i++){
-	tbl[i]=*(ptTbl+i);
-}
+	 for(i=0;i<11;i++){
+		tbl[i]=*(ptTbl+i);
+	}
 	  i=valMin;
 	  j=valMin+ (int)(tblLen-1)*elmtGap;
 

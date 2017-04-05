@@ -27,8 +27,8 @@
 #define mainMB_TASK_PRIORITY    ( tskIDLE_PRIORITY + 3 )
 #define REG_INPUT_START         30000
 #define REG_INPUT_NREGS         4
-#define REG_HOLDING_START       40000
-#define REG_HOLDING_NREGS       130
+#define REG_HOLDING_START       40001
+#define REG_HOLDING_NREGS       150
 
 #define DISCRETE_START         10000
 #define DISCRETE_NREGS         32
@@ -46,6 +46,7 @@ static UCHAR   usDiscreteBuf[DISCRETE_NREGS/8];
 static USHORT   usCoilStart = COIL_START;
 static UCHAR   usCoilBuf[COIL_NREGS/8];
 static void mbUpdateReg(void);
+void fillMbReg(USHORT dstAddr,USHORT * ptData,UCHAR len);
 
 void mbtcpd_init(void);
 /* ----------------------- Start implementation -----------------------------*/
@@ -309,6 +310,10 @@ static void mbUpdateReg(void){
 	usRegHoldingBuf[31]=bmu[1].ct_1;
 	usRegHoldingBuf[32]=bmu[1].ct_2;
 	usRegHoldingBuf[33]=bmu[1].ct_3;
-	
 }
-	
+void fillMbReg(USHORT dstAddr,USHORT * ptData,UCHAR len){
+	USHORT *addr;
+	addr=&usRegHoldingBuf[dstAddr];
+	memcpy((USHORT *)&usRegHoldingBuf[dstAddr],ptData,len);
+
+}

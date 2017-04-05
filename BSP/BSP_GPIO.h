@@ -84,6 +84,9 @@ note:
 #ifdef PRO_TKS
 #define LID_SW_STAT     GPIO_ReadInputDataBit(DI_12V_1)
 #define MANUAL_SW_STAT	GPIO_ReadInputDataBit(DI_12V_2)
+#define HEATER_1_STAT	GPIO_ReadInputDataBit(LS1)
+#define HEATER_2_STAT	GPIO_ReadInputDataBit(LS2)
+
 #define HEATER_CTRL_1_ON	LS1_ON
 #define HEATER_CTRL_1_OFF	LS1_OFF
 #define HEATER_CTRL_2_ON	LS2_ON

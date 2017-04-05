@@ -1,9 +1,9 @@
 /***********************************************************************
-文件名称：CAN.C
-功    能：
-编写时间：2013.4.25
-编 写 人：
-注    意：
+name: CAN.C
+function: config CAN port
+make time: 2016.10.25
+auther: 
+note: 
 ***********************************************************************/
 #include "main.h"
 #include "bsp_can.h"
@@ -15,11 +15,11 @@ UNS8 C2_wait_num=0;
 unsigned char can1_rec_flag = 0;
 unsigned char CAN2_data[8];
 unsigned char can2_rec_flag = 0;
-//格式： 波特率  CAN_SJW 	CAN_BS1  CAN_BS2 CAN_Prescaler 参考CAN_Baud_Process(unsigned int Baud,CAN_InitTypeDef *CAN_InitStructure)
+//format: CAN_SJW 	CAN_BS1  CAN_BS2 CAN_Prescaler  CAN_Baud_Process(unsigned int Baud,CAN_InitTypeDef *CAN_InitStructure)
 const unsigned int CAN_baud_table[CAN_BAUD_NUM][5] = 
 {
-//波特率， CAN_SJW，   CAN_BS1，    CAN_BS2，CAN_Prescaler 
-	{5,   CAN_SJW_1tq,CAN_BS1_13tq,CAN_BS2_2tq,450},		//未通			
+//baudrate  CAN_SJW，   CAN_BS1，    CAN_BS2，CAN_Prescaler 
+	{5,   CAN_SJW_1tq,CAN_BS1_13tq,CAN_BS2_2tq,450},		// not use
 	{10,  CAN_SJW_1tq,CAN_BS1_6tq,CAN_BS2_2tq, 400},		//未通			
 	{15,  CAN_SJW_1tq,CAN_BS1_13tq,CAN_BS2_2tq,150},		//15K  未通
 	{20,  CAN_SJW_1tq,CAN_BS1_6tq, CAN_BS2_2tq,200},		//20k //未通
@@ -41,13 +41,13 @@ const unsigned int CAN_baud_table[CAN_BAUD_NUM][5] =
 	{1000,CAN_SJW_1tq,CAN_BS1_15tq,CAN_BS2_5tq,2},			//1000K	ok
 };
 /***********************************************************************
-函数名称：CAN_Configuration(void)
-功    能：完成can的配置
-输入参数：
-输出参数：
-编写时间：
-编 写 人：
-注    意：
+name ：CAN_Configuration(void)
+function ：finish CAN configuration
+input: 
+output: 
+time: 
+author: 
+note：
 ***********************************************************************/
 void CAN1_Configuration(void)
 {
@@ -98,7 +98,7 @@ void CAN1_Configuration(void)
 
 	CAN_FilterInitStructure.CAN_FilterNumber = 0;	   //CAN1 filter id from 0 to 13
 
-	CAN_FilterInitStructure.CAN_FilterMode = CAN_FilterMode_IdMask;	   //滤波屏蔽模式
+	CAN_FilterInitStructure.CAN_FilterMode = CAN_FilterMode_IdMask;	   //filter
 	CAN_FilterInitStructure.CAN_FilterScale = CAN_FilterScale_32bit;
 	CAN_FilterInitStructure.CAN_FilterIdHigh = 0x0000;
 	CAN_FilterInitStructure.CAN_FilterIdLow = 0x0000;
@@ -144,7 +144,7 @@ void CAN2_Configuration(void)
 
 	/* CAN configuration ********************************************************/  
 	/* Enable CAN clock */
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1 | RCC_APB1Periph_CAN2, ENABLE);//用can2时，can1时钟也要开启
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1 | RCC_APB1Periph_CAN2, ENABLE);//
 
 	/* CAN register init */
 	CAN_DeInit(CAN2);
@@ -182,7 +182,7 @@ void CAN2_Configuration(void)
 /***********************************************************************
 name: CAN_Baud_Process(unsigned int Baud,CAN_InitTypeDef *CAN_InitStructure)
 function: set CAN port baudrate
-CAN_SJW : CAN_SJW_1tq - CAN_SJW_4tq	  不能比任何一相位缓冲段长
+CAN_SJW : CAN_SJW_1tq - CAN_SJW_4tq	  
 CAN_BS1 : CAN_BS1_1tq - CAN_BS1_16tq
 CAN_BS2 : CAN_BS2_1tq - CAN_BS2_8tq
 CAN_Prescaler : 1 - 1024
@@ -271,9 +271,8 @@ function: CAN2 Receive interrupt response
 input : void
 return: void
 data in CAN2_data[8]
-编写时间：
-编 写 人：
-注    意：
+author ：
+note:
 ***********************************************************************/
 void CAN2_RX0_IRQHandler(void)
 {

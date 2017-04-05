@@ -1,9 +1,6 @@
 /***********************************************************************
-文件名称：main.C
-功    能：
-编写时间：
-编 写 人：北京智嵌物联网电子技术团队
-注    意：
+name: main.c
+function: entry point
 ***********************************************************************/
 #include "main.h"
 #include "Task_EFlash.h"
@@ -11,6 +8,8 @@
 #include "Task_Main.h"
 #include "Task_sysCheck.h"
 #include "Task_wifi.h"
+#include "mesa.h"
+
 extern int mbtcp_task( void *pdata );
 
 uint32_t main_loop_count=0;
@@ -54,25 +53,27 @@ void Task_StartUp(void *pdata)
  	OSTaskCreate(Task_CANSend, (void *)0, &Stk_Task_CAN_Send[TASK_CAN2_REV_STK_SIZE-1], OS_USER_PRIO_GET(23));
 	OSTaskCreate(Task_CAN2MsgBuf, (void *)0, &Stk_Task_CAN2_Snd2Buf[TASK_CAN2_SEND_TO_BUF_STK_SIZE-1], OS_USER_PRIO_GET(22));
 	OSTaskCreate(Task_AVChg, (void *)0, &Stk_Task_AVChg[TASK_CAN2_REV_STK_SIZE-1], OS_USER_PRIO_GET(20));
-//	OSTaskCreate(Task_EFlash, (void *)0, &Stk_Task_EFlash[400-1], OS_USER_PRIO_GET(19));
-//OSTaskCreate(Task_HTTP, (void *)0, &Stk_Task_HTTP[2*TASK_TEST_HTTP_STK_SIZE-1], OS_USER_PRIO_GET(30));
+	////	OSTaskCreate(Task_EFlash, (void *)0, &Stk_Task_EFlash[400-1], OS_USER_PRIO_GET(19));
+	//OSTaskCreate(Task_HTTP, (void *)0, &Stk_Task_HTTP[2*TASK_TEST_HTTP_STK_SIZE-1], OS_USER_PRIO_GET(30));
 	
 	OSTaskCreate(Task_Main, (void *)0, &Stk_Task_Main[TASK_MAIN_STK_SIZE-1], OS_USER_PRIO_GET(5));
 	OSTaskCreate(Task_FaultCheck, (void *)0, &Stk_TaskFaultCheck[TASK_FAULT_CHECK_STK_SIZE-1], OS_USER_PRIO_GET(4));
 	OSTaskCreate(Task_wifi, (void *)0, &Stk_Task_WIFI[TASK_WIFI_STK_SIZE-1], OS_USER_PRIO_GET(30));
-//	OSTaskCreate(Task_LED, (void *)0, &Stk_Task_LED[TASK_TEST_LED_STK_SIZE-1], OS_USER_PRIO_GET(11));
+	//	OSTaskCreate(Task_LED, (void *)0, &Stk_Task_LED[TASK_TEST_LED_STK_SIZE-1], OS_USER_PRIO_GET(11));
+	OSTaskCreate(Task_Mesa, (void *)0, &Stk_Task_Mesa[TASK_MESA_STK_SIZE-1], OS_USER_PRIO_GET(31));
 	while (1)
 	{
 		//guard routine
-		//normally flash a LED to show system is runing
 		updateBP_BM();
 		LED1_Toggle;
 		main_loop_count++;
 		if(main_loop_count==2){
 			OSTaskCreate(mbtcp_task, (void *)0, &Stk_Task_HTTP[2*TASK_TEST_HTTP_STK_SIZE-1], OS_USER_PRIO_GET(29));
-
 			//OSTaskCreate(Task_HTTP, (void *)0, &Stk_Task_HTTP[2*TASK_TEST_HTTP_STK_SIZE-1], OS_USER_PRIO_GET(29));
 		}
-		OSTimeDly(1000);//1000ms
+		updateBMSoc(&bmInfo,100);
+		
+		strPlimSet(&bmInfo);
+		OSTimeDly(100);//1000ms
 	}
 }

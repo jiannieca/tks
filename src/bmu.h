@@ -3,6 +3,8 @@
 #include "applicfg.h"
 #include "data.h"
 #define MAX_BMU_NUM 16
+#define BMU_CV_NUM 14
+#define BMU_CT_NUM 3
 /* BMU flag 1 (CANOpen 6D07) */
 typedef struct{
 	UNS8 rev_1:1;
@@ -450,10 +452,11 @@ int32_t	IMBV; //	INT32	mV	Voltage Threshold:could not balance forever R/W
 		CellV_Gain[13]	FLOAT	mV/bit		R/W
 
 #endif
-UNS8 alive; //
+UNS8 alive; // 1: bmu is broading CAN message. 0: slience
+UNS8 aliveBuf; //
 UNS16 cv_min;
 UNS16 cv_max;
-
+INT16 ct[14]; // 0.1C
 
 }BMU_INFO;
 

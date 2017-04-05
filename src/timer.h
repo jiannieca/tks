@@ -1,14 +1,16 @@
 /***********************************************************************
-文件名称：timer.h
-功    能：
-编写时间：2013.4.25
-编 写 人：
-注    意：
+name: timer.h
+make time: 2013.4.25
+auther: 
+note:
 ***********************************************************************/
 #ifndef _TIMER_H_
 #define _TIMER_H_
 
 void TIM_Configuration(void);
+#define SECONDS( a )        ((long)a * (long)1000)
+#define MILISECOND(a)		((long)a * (long)1)
+#define MS10th(a)		((long)a * (long)10)
 
 #endif
 

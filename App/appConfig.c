@@ -13,7 +13,10 @@ void BPInit(void);
 /***********************************************************************
  ***********************************************************************/
 void SCInit(void){
+	bmuInit();
+	
 	BPInit();
+	
 	//BMinit must after BPInit
 	BMInit();
 	SysVarInit();
@@ -32,6 +35,12 @@ void BMInit(void){
 	df_read((UNS8 *)&bmInfo,sizeof(bmInfo));
 	bmInfo.Inter_Role=ARTRIBITION;	//always set to slave node when start
 	bmInfo.intAddr=0xA8;
+	bmInfo.fullCapacity=15480000;
+	bmInfo.capacityGain=0;
+	bmInfo.capacityGainTotal=0;
+	bmInfo.capacityLose=0;
+	bmInfo.capacityLoseTotal=0;
+	
 	if(bmInfo.mod_sn>0xFFFFFF) bmInfo.mod_sn=DEFAULT_MOD_SN;
 	if(bmInfo.mod_soc>1000) bmInfo.mod_soc=1000;
 	if(bmInfo.mod_soh>1000) bmInfo.mod_soc=1000;
@@ -43,8 +52,14 @@ void BMInit(void){
 	if(bmInfo.mod_life_whr_c>0xFFFFFFFFFFFFFFF) bmInfo.mod_life_whr_c=0;
 	if(bmInfo.mod_life_whr_d>0xFFFFFFFFFFFFFFF) bmInfo.mod_life_whr_d=0;
 	bmInfo.rand_num=RNG_GetRandomNumber();
+	bmInfo.ptBMU=(BMU_INFO *)&bmu[0];
+	bmInfo.bmu_alive_num=0;
+	bmInfo.bmu_on_num=0;
+	bmInfo.bmu_ready_num=0;
+	
 	memcpy((void *)&bpInfo.mod[0],(void *)&bmInfo,sizeof(bmInfo));
 		SPI_FLASH_CS_HIGH();
+		bmInfo.SOC_OCV_adjusted=0;
 		bmInfo.f_bmu_lost=1;
 		bmInfo.bmuOnCmd=0;
 		bmInfo.mod_fw_ver_major=BP_FW_VER_MAJOR;

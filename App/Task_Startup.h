@@ -5,7 +5,7 @@
 
 
 //assign stack for task
-#define TASK_STARTUP_STK_SIZE  600
+#define TASK_STARTUP_STK_SIZE  800
 
 
 extern OS_STK Stk_TaskStartUp[TASK_STARTUP_STK_SIZE];

@@ -53,7 +53,6 @@ OS_CPU_SR_Save
     CPSID   I
     BX      LR
 
-;»Ö¸´×´Ì¬¼Ä´æÆ÷Öµ
 OS_CPU_SR_Restore
     MSR     PRIMASK, R0
     BX      LR

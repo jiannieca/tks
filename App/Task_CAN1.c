@@ -198,10 +198,14 @@ extern	AD_RESULT ad_res;
 					memcpy((void *)&(bmu[nodeid-1].PackVolt),d->transfers[0].data,(uint32_t)d->transfers[0].offset);
 					break;
 				case 5:
-					memcpy((void *)&(bmu[nodeid-1].ct_1),d->transfers[0].data,(uint32_t)d->transfers[0].offset);					
+					memcpy((void *)&(bmu[nodeid-1].ct_1),d->transfers[0].data,(uint32_t)d->transfers[0].offset);
+					bmu[nodeid-1].ct[0]=(INT16)bmu[nodeid-1].ct_1;
+					bmu[nodeid-1].ct[1]=(INT16)bmu[nodeid-1].ct_2;
+					bmu[nodeid-1].ct[2]=(INT16)bmu[nodeid-1].ct_3;
+					
 					break;		
 				case 6:
-					memcpy((void *)&(bmu[nodeid-1].COCI),d->transfers[0].data,(uint32_t)d->transfers[0].offset);
+				//nie because it will change value of ct[]	memcpy((void *)&(bmu[nodeid-1].COCI),d->transfers[0].data,(uint32_t)d->transfers[0].offset);
 					break;
 				case 7:
 					break;

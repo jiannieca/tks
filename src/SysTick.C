@@ -1,9 +1,8 @@
 /***********************************************************************
-文件名称：SysTick.C
-功    能：
-编写时间：2013.4.25
-编 写 人：
-注    意：
+file name: SysTick.c
+make time: 2017.4.1
+authe:
+note: 
 ***********************************************************************/
 #include "main.h"
 #include "sysTick.h"
@@ -38,13 +37,6 @@ extern __IO uint32_t LocalTime ;
        - Reload Value should not exceed 0xFFFFFF
    */
 /***********************************************************************
-函数名称：SysTick_Configuration(void)
-功    能： 1ms中断一次
-输入参数：
-输出参数：
-编写时间：2013.4.25
-编 写 人：
-注    意：
 ***********************************************************************/
 void SysTick_Configuration(void)
 {
@@ -67,13 +59,7 @@ void SysTick_Configuration(void)
 
 
 /***********************************************************************
-函数名称：TimingDelay_Decrement(void)
-功    能： 延时计数，
-输入参数：
-输出参数：
-编写时间：2013.4.25
-编 写 人：
-注    意： 在中断函数里调用
+function name ：TimingDelay_Decrement(void)
 ***********************************************************************/
 void TimingDelay_Decrement(void)
 {
@@ -91,7 +77,7 @@ uint32_t timeDiff(uint32_t t1,uint32_t t2){
 uint8_t isDelayExp( uint32_t delayTime, uint32_t startTime )
 {
     uint32_t tempTick;
- //   tempTick = LocalTime;
+    tempTick = OSTimeGet();
     if ( TickGetDiff( tempTick, startTime) >  delayTime )
     {
         return TRUE;

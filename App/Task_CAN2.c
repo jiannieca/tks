@@ -6,7 +6,7 @@
 #include "Task_Main.h"
 #include "Task_sysCheck.h"
 #include "shed_ctrl.h"
-
+#include "battery_gt.h"
 OS_STK Stk_Task_CAN2_Rev[TASK_CAN2_REV_STK_SIZE];
 OS_STK Stk_Task_CAN2_Snd2Buf[TASK_CAN2_SEND_TO_BUF_STK_SIZE];
 OS_STK Stk_Task_CAN_Send[TASK_CAN_SEND_STK_SIZE];
@@ -25,17 +25,50 @@ static void CAN_Bm2Bp(UNS8 id);
 static void CAN_Bp2Relay(UNS8 rl_stat);
 static void CAN_Send_Debug(void);
 static void J1939MsgAssb(CanRxMsg *nomMsg,J1939_MESSAGE * JMsg);
-static void sendExtAddrClaim(void);
-static void sendExtBPInfo_1(void);
-static void sendExtBPInfo_2(void);
-static void sendExtBPVersion(void);
+static void sendExtAddrClaim_FFA0(void);
+static void sendExtBPInfo_FFA1(void);
+static void sendExtBPInfo_FFA3(void);
+static void sendExtBPInfo_FFA4(void);
+
 static void insCellInfo(UNS8 scrAddr,UNS8 * da);
 static void insModInfo_1(UNS8 scrAddr,UNS8 * da);
 static void insModInfo_2(UNS8 scrAddr,UNS8 * da);
-
+static void CAN_GT_ReadV(UNS8 id,GT_OP_CMD op);
 static UNS8 isAddrSent=0;
 extern 	UNS32  main_task_timer;
 extern UNS32 mTsk_rt;
+
+void Task_CAN2MsgBuf_GT(void *pdata){
+	static UNS8 C2CVSendId=0;
+	static UNS8 mid=0;
+	GT_OP_CMD op_mode;
+	UNS32 static loopCnt=0;
+	while(1){
+		OSTimeDly(10);//suspend at here for 10ms
+
+		if(loopCnt++>0xFFFFFFFF){loopCnt=0;} 
+		if((loopCnt%2)==0){	//20ms
+			//read module voltage
+			if(C2CVSendId++>13) C2CVSendId=0;
+			op_mode=GT_READ_VOL;
+			CAN_GT_ReadV(mid, op_mode);
+			if(mid++>MAX_BMU_NUM) mid=0;
+		}
+		if((loopCnt%101)==0){
+			sendExtAddrClaim_FFA0();
+		}
+		if((loopCnt%1001)==0){
+			sendExtBPInfo_FFA1();
+			sendExtBPInfo_FFA3();
+			sendExtBPInfo_FFA4();
+		}
+		if((loopCnt%21)==0){	//210ms
+			CAN_Send_Debug();
+		}
+	}
+
+}
+
 /***********************************************************************
 note: STM32F407 only has 3 send mail box
 ***********************************************************************/
@@ -47,8 +80,7 @@ void Task_CAN2_Rev(void *pdata)
 	UNS16 wd[4];
 	CanRxMsg * RxMSG;
 	CAN2_Configuration();
-	sem_CAN2_rec_flag = OSSemCreate(1); //创建一个信号量,
-
+	sem_CAN2_rec_flag = OSSemCreate(1); //create a semphare
 	while(1)
 	{  	
 		OSSemPend(sem_CAN2_rec_flag, 0,&os_err);//suspend at here wait for CAN2 message
@@ -65,20 +97,26 @@ void Task_CAN2_Rev(void *pdata)
 void can2Dispatch(CanRxMsg * RxMSG){
 	UNS8 bt[8];
 	J1939_MESSAGE jmsg;
-	
+	static VREQ_ENUM lastMtnReg=0;
 	if(RxMSG->IDE==CAN_Id_Extended){
 		J1939MsgAssb(RxMSG,&jmsg);
 		if(jmsg.pgn==0x11700){
 			schnider_parse(&jmsg);
 		}else if(jmsg.pgn==0xFF80){ //report request
 			if((jmsg.data[0]==0xFF) ||(jmsg.data[0]==bpInfo.extAddr)){
-				if(jmsg.data[1]==0x84){
-					sendExtBPVersion();
-				}
 			}
 		}else if(jmsg.pgn==0xFF81){ //ECU keep alive
-			vcuInfo.keep_alive_req=jmsg.data[7] & 0x03;
-			vcuInfo.vcuCmd=jmsg.data[7] & 0x03;
+			vcuInfo.keep_alive_req=jmsg.data[0] & 0x03;
+			vcuInfo.vcuCmd=jmsg.data[1] & 0x0F;
+			vcuInfo.vcuMtnReq=jmsg.data[2] & 0x0F;
+			if(lastMtnReg==VREQ_NA){
+				if(vcuInfo.vcuMtnReq==VREQ_CLEAR_ALARM){
+					modAlarmClr();
+				}else if(vcuInfo.vcuMtnReq==VREQ_CLEAR_FAULT){
+					modFaultClr();
+				}
+			}
+			lastMtnReg=vcuInfo.vcuMtnReq;
 			
 			OSSemPost(sem_vcu_can_rev);
 		}else if(jmsg.pgn==0xFFF0){ //address claim
@@ -86,7 +124,7 @@ void can2Dispatch(CanRxMsg * RxMSG){
 		}else if(jmsg.pgn==0xFFF1){ //address contention
 		}else if(jmsg.pgn==0xFFF2){ //address directed
 		}else if(jmsg.pgn==0xFFF3){ //address request
-			sendExtAddrClaim();
+			sendExtAddrClaim_FFA0();
 			//CAN2_WriteData(0x8FFF4,bt,8,CAN_Id_Extended);
 		}else if(jmsg.pgn==0xFF88){ //cell voltage and temperture
 			insCellInfo(jmsg.jid.j1939_id.SourceAddress,&jmsg.data[0]);
@@ -147,34 +185,21 @@ void Task_CAN2MsgBuf(void *pdata){
 		OSTimeDly(10);//suspend at here for 10ms
 
 		if(loopCnt++>0xFFFFFFFF){loopCnt=0;} 
-		if(gBOpMd==B_ARBITRATION){
-			sdIntAddrClaim(CAN2);
-		}
 		if((loopCnt%20)==0){	//200ms
 			//sdIntAddrClaim(CAN2);
 			if(C2CVSendId++>13) C2CVSendId=0;
 			CAN_Bm2Bp(C2CVSendId);
 		}
 		if((loopCnt%101)==0){
-			if(bmInfo.Inter_Role==MASTER){
-				sendExtBPInfo_1();
-				
-				if(!isAddrSent){
-					sendExtAddrClaim();
-					isAddrSent=1;
-				}
-			}
+			sendExtAddrClaim_FFA0();
 		}
 		if((loopCnt%1001)==0){
-			if(bmInfo.Inter_Role==MASTER){
-				sendExtBPInfo_2();
-			}
+			sendExtBPInfo_FFA1();
+			sendExtBPInfo_FFA3();
+			sendExtBPInfo_FFA4();
 		}
 		if((loopCnt%21)==0){	//210ms
 			CAN_Send_Debug();
-		}
-		if((loopCnt%11)==0){	//110ms
-			//schnider_ctrl();
 		}
 	}
 
@@ -185,7 +210,7 @@ void Task_CANSend(void *pdata){
 	static UNS8 C2RdPoint=0;
 	UNS8 transmit_mailbox;
     unsigned  char  os_err;
-	sem_CAN2_send_flag = OSSemCreate(10); //创建一个信号量,
+	sem_CAN2_send_flag = OSSemCreate(10); //create a semphere,
 	while(1){
 	//OSSemPend(sem_CAN2_send_flag, 0,&os_err);//suspend at here wait for CAN send command
 	OSTimeDly(1);//suspend at here for 5ms
@@ -410,24 +435,7 @@ static void CAN_Bm2Bp(UNS8 cid){
 static void CAN_Bp2Vcu(void){
 	CanTxMsg txMsg;
 	UNS8 bt[8];
-	if(bmInfo.Inter_Role==MASTER){
-	
-	/*
 
-	bt[0]=bpInfo.bp_lifw_wh & 0xFF;
-	bt[1]=(bpInfo.bp_lifw_wh>>8) & 0xFF;
-	bt[2]=(bpInfo.bp_lifw_wh >>16) & 0xFF;
-	bt[3]=(bpInfo.bp_lifw_wh>>24) & 0xFF;
-	CAN2_WriteData(0xCFF84A9,bt,8,CAN_Id_Extended);
-
-	bpInfo.extAddr=0xA9;
-	bt[0]=bpInfo.extAddr& 0xFF;
-	bt[5]=bpInfo.sc_fw_ver[2];
-	bt[6]=bpInfo.sc_fw_ver[1];
-	bt[7]=bpInfo.sc_fw_ver[0];
-	CAN2_WriteData(0x18B1FF,bt,8,CAN_Id_Extended);
-*/
-		}
 	
 }
 static void CAN_Bp2Relay(UNS8 chg){
@@ -569,52 +577,47 @@ void j1939_send(CAN_TypeDef *CANx,J1939_MESSAGE *jmsg){
 	msg=*jmsg;
 	CAN2_WriteData(msg.jid.eid,msg.data,msg.dlc,CAN_Id_Extended);
 }
-static void sendExtAddrClaim(void){
+static void sendExtAddrClaim_FFA0(void){
 	UNS8 bt[8];
-	bt[0]=0x84; //(BMS_SW_ID>>8) & 0xFF;
-	bt[1]=BMS_SW_ID & 0xFF;
-	bt[2]=0x70;
-	bt[3]=0xF0;
-	bt[4]=(BMS_HW_ID>>8) & 0xFF;
-	bt[5]=BMS_HW_ID & 0xFF;
-	bt[6]=(bmInfo.mod_sn>>8) & 0xFF;
-	bt[7]=bmInfo.mod_sn & 0xFF;
-	CAN2_WriteData(0x08FFF0A9,bt,8,CAN_Id_Extended);
+	bpInfo.hb ^=bpInfo.hb;
+	bt[0]=bpInfo.hb;
+	bt[1]=gBOpMd;
+	bt[2]=LID_SW_STAT;
+	bt[2]|=(UINT8)MANUAL_SW_STAT<<1;
+	bt[2]|=(UINT8)HEATER_2_STAT<<2;
+	bt[2]|=(UINT8)HEATER_2_STAT<<3;
+	CAN2_WriteData(0x08FFA0F0,bt,8,CAN_Id_Extended);
 }
-static void sendExtBPInfo_1(void){
+static void sendExtBPInfo_FFA1(void){
+	UNS8 bt[8];
+	bt[0]=bmInfo.mod_soc/10;
+	bt[1]=bmInfo.mod_soh/10;
+	bt[2]=(bmInfo.mod_curr/100)&0xFF;
+	bt[3]=((bmInfo.mod_curr/100)>>8)&0xFF;
+	bt[4]=(bmInfo.mod_volt)&0xFF;
+	bt[5]=((bmInfo.mod_volt)>>8)&0xFF;
+	
+	bt[6]=(bmInfo.mod_clc) & 0xFF;
+	bt[7]=(bmInfo.mod_cld) & 0xFF;
+	CAN2_WriteData(0x08FFA1F0,bt,8,CAN_Id_Extended);
+}
+static void sendExtBPInfo_FFA3(void){
 	UNS8 bt[8];
 	
-	bt[0]=(bpInfo.bp_clc*2) & 0xFF;
-	bt[1]=((bpInfo.bp_clc*2)>>8) & 0xFF;
-	bt[2]=(bpInfo.bp_cld*2) & 0xFF;
-	bt[3]=((bpInfo.bp_cld*2)>>8) & 0xFF;
-	bt[4]=((bpInfo.bp_curr+1600000)/50) & 0xFF;  // unit 0.05 offset:1600A
-	bt[5]=(((bpInfo.bp_curr+1600000)/50)>>8) & 0xFF;
-	bt[6]=(bpInfo.bp_VBus/10) & 0xFF;
-	bt[7]=((bpInfo.bp_VBus/10)>>8) & 0xFF;
-	CAN2_WriteData(0xCFF8200+bpInfo.extAddr,bt,8,CAN_Id_Extended);
+	bt[0]=(ad_res.T_2) & 0xFF;
+	bt[1]=(ad_res.T_3) & 0xFF;
+	CAN2_WriteData(0x08FFA3F0,bt,8,CAN_Id_Extended);
 }
-static void sendExtBPInfo_2(void){
+static void sendExtBPInfo_FFA4(void){
 	UNS8 bt[8];
-	
-	bt[0]=bpInfo.bp_lifw_wh & 0xFF;
-	bt[1]=(bpInfo.bp_lifw_wh>>8) & 0xFF;
-	bt[2]=(bpInfo.bp_lifw_wh>>16) & 0xFF;
-	bt[3]=(bpInfo.bp_lifw_wh>>24) & 0xFF;
-	bt[4]=bpInfo.bp_soh & 0xFF;
-	bt[5]=(bpInfo.bp_soh>>8) & 0xFF;
-	bt[6]=bpInfo.bp_soc & 0xFF;
-	bt[7]=(bpInfo.bp_soc>>8) & 0xFF;
-	CAN2_WriteData(0xCFF8300+bpInfo.extAddr,bt,8,CAN_Id_Extended);
-}
-static void sendExtBPVersion(void){
-	UNS8 bt[8];
-	bt[0]=bt[1]=bt[2]=bt[3]=bt[4]=0xFF;
+	bt[0]=bpInfo.bp_sn & 0xFF;
+	bt[1]=(bpInfo.bp_sn>>8) & 0xFF;
+	bt[2]=(UNS8)bpInfo.sc_hw_version & 0xFF;
 
-	bt[5]=bpInfo.sc_fw_ver_major;
-	bt[6]=bpInfo.sc_fw_ver_minor;
-	bt[7]=bpInfo.sc_fw_ver_patch;
-	CAN2_WriteData(0x18FF8400+bpInfo.extAddr,bt,8,CAN_Id_Extended);
+	bt[3]=bpInfo.sc_fw_ver_major;
+	bt[4]=bpInfo.sc_fw_ver_minor;
+	bt[5]=bpInfo.sc_fw_ver_patch;
+	CAN2_WriteData(0x08FFA4F0,bt,8,CAN_Id_Extended);
 }
 static void sendExt_FFF0(void){
 	UNS8 bt[8];
@@ -668,6 +671,19 @@ static void sendExt_FFF4(void){
 	bt[7]=(bmInfo.mod_sn >>8)&& 0xFF;
 	CAN2_WriteData(0x18FFF400+bpInfo.extAddr,bt,8,CAN_Id_Extended);
 }
+static void CAN_GT_ReadV(UNS8 id,GT_OP_CMD op){
+	UNS8 bt[8];
+	bt[0]=1;
+	bt[1]=0;
+	bt[2]=0x0D;
+	bt[3]=0xF3;
+	bt[4]=0;
+	bt[5]=0;
+	bt[6]=0;
+	bt[7]=0;
+	CAN2_WriteData(0x181000F4+((UNS16)id<<8),bt,8,CAN_Id_Extended);
+}
+
 static void insCellInfo(UNS8 scrAddr,UNS8 * da){
 	UNS8 iid,cid;
 	for(iid=0;iid<bpInfo.mod_num;iid++){
