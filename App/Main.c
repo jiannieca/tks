@@ -1,7 +1,7 @@
 /***********************************************************************
 name: main.c
 function: entry point
-***********************************************************************/
+******************************************************************version*****/
 #include "main.h"
 #include "Task_EFlash.h"
 #include "Task_AVChg.h"
@@ -9,12 +9,13 @@ function: entry point
 #include "Task_sysCheck.h"
 #include "Task_wifi.h"
 #include "mesa.h"
-
 extern int mbtcp_task( void *pdata );
 
 uint32_t main_loop_count=0;
 int main(void)
 {
+	int i;
+	i=1;
 	//board initlize
 	BSP_Init();
 	//battery System parameter initlize
