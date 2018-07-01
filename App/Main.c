@@ -15,7 +15,7 @@ uint32_t main_loop_count=0;
 int main(void)
 {
 	int i;
-	i=1287;
+	i=11;
 	//board initlize
 	BSP_Init();
 	//battery System parameter initlize
